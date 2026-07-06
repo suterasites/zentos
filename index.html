@@ -118,10 +118,10 @@
     /* Mega menu */
     .mega { opacity: 0; visibility: hidden; transform: translateY(8px); pointer-events: none;
             transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
-    .mega.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
+    .mega-wrap:hover .mega { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
             transition: opacity .25s ease, transform .25s ease, visibility 0s; }
     #mega-chevron { transition: transform .25s ease; }
-    #mega-trigger[aria-expanded="true"] #mega-chevron { transform: rotate(180deg); }
+    .mega-wrap:hover #mega-chevron { transform: rotate(180deg); }
     @media (max-width: 1023.98px) { .mega { display: none; } }
   </style>
 </head>
@@ -139,21 +139,11 @@
       </div>
       <nav class="hidden lg:flex items-center gap-8 px-8 border-l border-ink/10 text-sm font-medium text-ink/75">
         <a href="#projects" class="link-underline hover:text-ink">Projects</a>
-        <a id="mega-trigger" href="#services" aria-haspopup="true" aria-expanded="false" class="link-underline hover:text-ink inline-flex items-center gap-1.5">
-          What We Build
-          <svg id="mega-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </a>
-        <a href="#process" class="link-underline hover:text-ink">Process</a>
-        <a href="#about" class="link-underline hover:text-ink">About</a>
-      </nav>
-      <div class="flex-1"></div>
-      <a href="#contact" class="hidden sm:flex items-center justify-center px-10 lg:px-16 bg-brand-dark text-cloud font-semibold hover:bg-brand transition-colors">Get a Quote</a>
-      <a href="#contact" class="hidden lg:flex items-center px-8 border-l border-ink/10 text-sm font-medium text-ink hover:text-brand transition-colors">Contact Us</a>
-      <button id="menuBtn" class="lg:hidden flex items-center px-5 ml-auto text-ink" aria-label="Menu">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-
+        <div class="mega-wrap group flex items-center h-full">
+          <a id="mega-trigger" href="#services" aria-haspopup="true" class="link-underline hover:text-ink inline-flex items-center gap-1.5">
+            What We Build
+            <svg id="mega-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
     <!-- mega menu -->
     <div id="mega" class="absolute top-full inset-x-0 bg-cloud border-t border-ink/10 shadow-[0_34px_60px_-34px_rgba(21,24,29,0.4)]">
       <div class="max-w-6xl mx-auto px-8 lg:px-10 py-10">
@@ -205,6 +195,17 @@
           </a>
         </div>
       </div>
+    </div>
+        </div>
+        <a href="#process" class="link-underline hover:text-ink">Process</a>
+        <a href="#about" class="link-underline hover:text-ink">About</a>
+      </nav>
+      <div class="flex-1"></div>
+      <a href="#contact" class="hidden sm:flex items-center justify-center px-10 lg:px-16 bg-brand-dark text-cloud font-semibold hover:bg-brand transition-colors">Get a Quote</a>
+      <a href="#contact" class="hidden lg:flex items-center px-8 border-l border-ink/10 text-sm font-medium text-ink hover:text-brand transition-colors">Contact Us</a>
+      <button id="menuBtn" class="lg:hidden flex items-center px-5 ml-auto text-ink" aria-label="Menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
 
     <!-- mobile menu -->
@@ -757,18 +758,6 @@
         b.addEventListener('click', () => select(b));
         b.addEventListener('mouseenter', () => select(b));
       });
-    })();
-
-    // Mega menu
-    (function () {
-      const trigger = document.getElementById('mega-trigger');
-      const mega = document.getElementById('mega');
-      if (!trigger || !mega) return;
-      let t;
-      const open = () => { clearTimeout(t); mega.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); };
-      const close = () => { t = setTimeout(() => { mega.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }, 140); };
-      [trigger, mega].forEach(el => { el.addEventListener('mouseenter', open); el.addEventListener('mouseleave', close); });
-      mega.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { clearTimeout(t); mega.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }));
     })();
 
     // Year
