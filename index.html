@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zentos Constructions | Boutique Residential Builder, Melbourne</title>
+  <meta name="description" content="Zentos Constructions is a Melbourne boutique residential builder specialising in multi-unit developments, sloping block builds and architectural homes. Based in Docklands, building across metropolitan Melbourne.">
+  <meta name="keywords" content="boutique builder Melbourne, multi unit developer, sloping block builder, architectural builder, custom home builder Melbourne, Docklands builder">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zentos Constructions | Boutique Residential Builder, Melbourne">
+  <meta property="og:description" content="Multi-unit, sloping block and architectural residential builds across Melbourne. Boutique builder based in Docklands.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Zentos Constructions",
+    "description": "Boutique residential builder specialising in multi-unit developments, sloping block builds and architectural homes across Melbourne.",
+    "telephone": "+61393524720",
+    "email": "serkan@zentos.com.au",
+    "url": "https://www.zentos.com.au",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Suite 1214, 401 Docklands Drive",
+      "addressLocality": "Docklands",
+      "addressRegion": "VIC",
+      "postalCode": "3008",
+      "addressCountry": "AU"
+    },
+    "areaServed": { "@type": "Place", "name": "Melbourne, Victoria" },
+    "knowsAbout": ["Multi-Unit Developments", "Sloping Block Builds", "Architectural Builds"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#15181d',
+            brand: { DEFAULT: '#2f5fa3', dark: '#1f4372', light: '#eaf0f8' },
+            stone: '#8b8f96',
+            cloud: '#f6f4f1',
+          },
+          fontFamily: {
+            display: ['"Fraunces"', 'Georgia', 'serif'],
+            body: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #15181d; }
+    h1, h2, h3, .font-display { font-family: 'Fraunces', Georgia, serif; }
+    .tracking-tight-2 { letter-spacing: -0.03em; }
+    .eyebrow { letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.72rem; font-weight: 600; }
+    .lead { line-height: 1.75; }
+    /* Editorial hero backdrop, image-independent for the first pass */
+    .hero-bg {
+      background:
+        radial-gradient(120% 120% at 78% 12%, rgba(47,95,163,0.28) 0%, rgba(47,95,163,0) 55%),
+        radial-gradient(90% 90% at 12% 88%, rgba(47,95,163,0.14) 0%, rgba(21,24,29,0) 60%),
+        linear-gradient(160deg, #10131a 0%, #171b23 45%, #1d2430 100%);
+    }
+    .hero-grain::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .card-shadow { box-shadow: 0 1px 2px rgba(21,24,29,0.04), 0 18px 40px -24px rgba(31,67,114,0.28); }
+    .link-underline { background-image: linear-gradient(currentColor,currentColor); background-size: 0% 1px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s ease; }
+    .link-underline:hover { background-size: 100% 1px; }
+    .btn { transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .reveal-hidden { opacity: 0; transform: translateY(18px); }
+    .reveal-show { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+    .nav-shadow { box-shadow: 0 10px 30px -20px rgba(21,24,29,0.4); }
+    .vertical-rl { writing-mode: vertical-rl; }
+    .hero-video { filter: saturate(1.03) contrast(1.02); }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    .bob { animation: bob 2.2s ease-in-out infinite; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* Full-bleed the carousel column out to the right viewport edge, at any width */
+    .wb-bleed { margin-right: calc(50% - 50vw); }
+    /* Closing statement that fades its lower lines, editorial style */
+    .fade-text {
+      background: linear-gradient(180deg, #15181d 0%, #15181d 38%, rgba(21,24,29,0.24) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .pri-card { transition: transform .3s ease; }
+    .pri-card:hover { transform: translateY(-3px); }
+    /* FAQ accordion (native details) */
+    details.faq > summary { list-style: none; cursor: pointer; }
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq .faq-icon { transition: transform .3s ease; }
+    details.faq[open] .faq-icon { transform: rotate(45deg); }
+    /* What We Build split-screen selector */
+    .wb-item .wb-label { color: rgba(246,244,241,0.32); transition: color .35s ease; }
+    .wb-item:hover .wb-label { color: rgba(246,244,241,0.7); }
+    .wb-item[aria-current="true"] .wb-label,
+    .wb-item[aria-current="true"]:hover .wb-label { color: #f6f4f1; }
+    .wb-item .wb-arrow { opacity: 0; transition: opacity .35s ease; }
+    .wb-item[aria-current="true"] .wb-arrow { opacity: 1; }
+    #wb-image { transition: opacity .45s ease; }
+    /* Mega menu */
+    .mega { opacity: 0; visibility: hidden; transform: translateY(8px); pointer-events: none;
+            transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
+    .mega.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
+            transition: opacity .25s ease, transform .25s ease, visibility 0s; }
+    #mega-chevron { transition: transform .25s ease; }
+    #mega-trigger[aria-expanded="true"] #mega-chevron { transform: rotate(180deg); }
+    @media (max-width: 1023.98px) { .mega { display: none; } }
+  </style>
+</head>
+<body class="bg-cloud antialiased">
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50 bg-cloud border-b border-ink/10 transition-shadow">
+    <div class="flex items-stretch h-[68px] text-ink">
+      <a href="#top" class="flex items-center px-5 md:px-8 shrink-0" aria-label="Zentos Constructions home">
+        <img src="Logo.jpg" alt="Zentos Constructions" class="h-[54px] w-auto" style="mix-blend-mode: multiply;">
+      </a>
+      <div class="hidden xl:flex flex-col justify-center px-6 border-l border-ink/10 leading-tight shrink-0">
+        <span class="text-[0.7rem] text-stone">Boutique builder</span>
+        <span class="text-sm font-medium text-ink">Melbourne, VIC</span>
+      </div>
+      <nav class="hidden lg:flex items-center gap-8 px-8 border-l border-ink/10 text-sm font-medium text-ink/75">
+        <a href="#projects" class="link-underline hover:text-ink">Projects</a>
+        <a id="mega-trigger" href="#services" aria-haspopup="true" aria-expanded="false" class="link-underline hover:text-ink inline-flex items-center gap-1.5">
+          What We Build
+          <svg id="mega-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <a href="#process" class="link-underline hover:text-ink">Process</a>
+        <a href="#about" class="link-underline hover:text-ink">About</a>
+      </nav>
+      <div class="flex-1"></div>
+      <a href="#contact" class="hidden sm:flex items-center justify-center px-10 lg:px-16 bg-brand-dark text-cloud font-semibold hover:bg-brand transition-colors">Get a Quote</a>
+      <a href="#contact" class="hidden lg:flex items-center px-8 border-l border-ink/10 text-sm font-medium text-ink hover:text-brand transition-colors">Contact Us</a>
+      <button id="menuBtn" class="lg:hidden flex items-center px-5 ml-auto text-ink" aria-label="Menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+
+    <!-- mega menu -->
+    <div id="mega" class="absolute top-full inset-x-0 bg-cloud border-t border-ink/10 shadow-[0_34px_60px_-34px_rgba(21,24,29,0.4)]">
+      <div class="max-w-6xl mx-auto px-8 lg:px-10 py-10">
+        <div class="grid grid-cols-4 gap-8">
+          <!-- intro -->
+          <div class="pr-6 border-r border-ink/10">
+            <p class="eyebrow text-brand mb-3">What We Build</p>
+            <h3 class="font-display text-2xl text-ink leading-snug tracking-tight-2">Boutique builds, done three ways.</h3>
+            <p class="text-sm text-ink/60 mt-3 leading-relaxed">Multi-unit, sloping block and architectural homes, built with the same care.</p>
+            <a href="#services" class="group/all inline-flex items-center gap-2 text-sm font-semibold text-ink mt-5 hover:text-brand">
+              View all builds
+              <svg class="transition-transform group-hover/all:translate-x-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+          <!-- build cards -->
+          <a href="#services" class="group/c block">
+            <div class="overflow-hidden rounded-xl">
+              <img src="649242456_17945679438129336_4454163457378815263_n..jpg" alt="Multi-unit development by Zentos Constructions" class="w-full h-32 object-cover transition-transform duration-500 group-hover/c:scale-105">
+            </div>
+            <h4 class="font-display text-lg text-ink mt-4">Multi-Unit Developments</h4>
+            <p class="text-sm text-ink/55 mt-1.5 leading-relaxed">Townhouses and multi-dwelling projects, delivered end to end.</p>
+          </a>
+          <a href="#services" class="group/c block">
+            <div class="overflow-hidden rounded-xl">
+              <img src="651507451_17980982870991627_6316780572582392126_n..jpg" alt="Sloping block build by Zentos Constructions" class="w-full h-32 object-cover transition-transform duration-500 group-hover/c:scale-105">
+            </div>
+            <h4 class="font-display text-lg text-ink mt-4">Sloping Block Builds</h4>
+            <p class="text-sm text-ink/55 mt-1.5 leading-relaxed">Steep and difficult sites turned into homes that use the fall.</p>
+          </a>
+          <a href="#services" class="group/c block">
+            <div class="overflow-hidden rounded-xl">
+              <img src="655204480_18087164551968882_6043593363337482051_n..jpg" alt="Architectural build by Zentos Constructions" class="w-full h-32 object-cover transition-transform duration-500 group-hover/c:scale-105">
+            </div>
+            <h4 class="font-display text-lg text-ink mt-4">Architectural Builds</h4>
+            <p class="text-sm text-ink/55 mt-1.5 leading-relaxed">Considered custom homes, built to the detail with your architect.</p>
+          </a>
+        </div>
+        <!-- quick links + cta -->
+        <div class="flex items-center justify-between gap-6 mt-9 pt-6 border-t border-ink/10">
+          <div class="flex items-center gap-7 text-sm font-medium text-ink/70">
+            <a href="#projects" class="hover:text-brand">Selected Projects</a>
+            <a href="#process" class="hover:text-brand">Our Process</a>
+            <a href="#about" class="hover:text-brand">About Zentos</a>
+            <a href="#faq" class="hover:text-brand">FAQ</a>
+          </div>
+          <a href="#contact" class="btn inline-flex items-center gap-2 rounded-full bg-ink text-cloud text-sm font-semibold px-6 py-3 hover:bg-brand-dark">
+            Start your build
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-cloud/98 backdrop-blur border-t border-ink/10">
+      <nav class="px-6 py-4 flex flex-col gap-3 text-ink font-medium">
+        <a href="#about" class="py-1">About</a>
+        <a href="#services" class="py-1">What We Build</a>
+        <a href="#projects" class="py-1">Projects</a>
+        <a href="#process" class="py-1">Process</a>
+        <a href="#contact" class="py-1">Contact</a>
+        <a href="#contact" class="mt-1 inline-flex items-center justify-center bg-brand-dark text-cloud font-semibold px-6 py-3">Get a Quote</a>
+        <a href="tel:0451060586" class="py-1 text-brand font-semibold">Call 0451 060 586</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen overflow-hidden bg-ink text-cloud">
+    <!-- video background -->
+    <video class="hero-video absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline
+           poster="654969138_18106888390877770_220556755959904743_n..jpg">
+      <source src="Zentos%20Hero%20Intro%20(NEW).mp4" type="video/mp4">
+    </video>
+    <!-- legibility overlays -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10"></div>
+
+    <!-- vertical wordmark, right edge -->
+    <span class="vertical-rl hidden md:block font-display font-semibold uppercase text-cloud/90 tracking-tight-2 leading-none pointer-events-none select-none absolute right-3 md:right-6 top-[88px] text-6xl lg:text-[5.25rem]">Constructions</span>
+
+    <!-- content -->
+    <div class="relative z-10 min-h-screen flex flex-col">
+      <!-- giant wordmark just under nav -->
+      <div class="px-5 md:px-10 pt-[92px] md:pt-[112px]">
+        <h1 class="font-display font-semibold uppercase text-cloud leading-[0.9] tracking-tight-2 text-[19vw] sm:text-[16vw] lg:text-[12rem]" style="letter-spacing:0.005em;">Zentos</h1>
+      </div>
+
+      <!-- bottom block -->
+      <div class="mt-auto px-6 md:px-10 pb-24 md:pb-14 max-w-2xl">
+        <h2 class="font-display text-cloud text-3xl sm:text-4xl md:text-5xl leading-[1.06] tracking-tight-2">
+          Considered homes,<br>built with intent.
+        </h2>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="#contact" class="btn inline-flex items-center justify-center bg-brand text-white font-semibold px-8 py-4 hover:bg-brand-dark">Book a Consult</a>
+          <a href="#projects" class="btn inline-flex items-center justify-center border border-dashed border-cloud/60 text-cloud font-semibold px-8 py-4 hover:bg-cloud/10">View Our Work</a>
+        </div>
+      </div>
+
+      <!-- scroll cue -->
+      <a href="#about" class="hidden md:flex absolute right-8 bottom-10 items-center gap-3 text-cloud/80 text-sm font-medium hover:text-cloud">
+        <span>Scroll to explore</span>
+        <svg class="bob" width="18" height="26" viewBox="0 0 18 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 1v22M2 16l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- PRIORITIES / THE WAY WE BUILD -->
+  <section id="priorities" class="bg-cloud border-b border-ink/5">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+
+      <!-- intro statement -->
+      <div class="max-w-3xl border-t border-ink/15 pt-6 reveal">
+        <p class="text-sm font-semibold text-ink mb-8">The way we build</p>
+        <p class="font-display text-2xl md:text-[2.1rem] leading-snug tracking-tight-2 text-ink">
+          Zentos Constructions designs and builds considered homes across metropolitan Melbourne, from multi-unit developments to one-off architectural houses on the sites others find too hard. Every project runs on the same principles, whatever its size.
+        </p>
+      </div>
+
+      <!-- mosaic: photos + priority cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mt-14 md:mt-20">
+
+        <!-- 1 -->
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="654969138_18106888390877770_220556755959904743_n..jpg" alt="Zentos Constructions home" class="w-full h-full object-cover">
+        </div>
+        <div class="pri-card aspect-square rounded-xl bg-brand-light text-brand-dark p-6 md:p-7 flex flex-col">
+          <p class="eyebrow text-brand-dark/60">What guides us</p>
+          <div class="flex-1 flex items-center justify-center text-center px-1">
+            <h3 class="font-display text-xl md:text-2xl leading-tight tracking-tight-2">A boutique load, on purpose</h3>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="649242456_17945679438129336_4454163457378815263_n..jpg" alt="Multi-unit development by Zentos Constructions" class="w-full h-full object-cover">
+        </div>
+        <div class="pri-card aspect-square rounded-xl bg-brand-dark text-cloud p-6 md:p-7 flex flex-col">
+          <p class="eyebrow text-cloud/55">What guides us</p>
+          <div class="flex-1 flex items-center justify-center text-center px-1">
+            <h3 class="font-display text-xl md:text-2xl leading-tight tracking-tight-2">Made for sloping sites</h3>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="pri-card aspect-square rounded-xl bg-brand text-white p-6 md:p-7 flex flex-col">
+          <p class="eyebrow text-white/65">What guides us</p>
+          <div class="flex-1 flex items-center justify-center text-center px-1">
+            <h3 class="font-display text-xl md:text-2xl leading-tight tracking-tight-2">Multi-unit, done properly</h3>
+          </div>
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="651507451_17980982870991627_6316780572582392126_n..jpg" alt="Sloping block build by Zentos Constructions" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="655204480_18087164551968882_6043593363337482051_n..jpg" alt="Architectural build by Zentos Constructions" class="w-full h-full object-cover">
+        </div>
+        <div class="pri-card aspect-square rounded-xl bg-[#e9e0d1] text-ink p-6 md:p-7 flex flex-col">
+          <p class="eyebrow text-ink/55">What guides us</p>
+          <div class="flex-1 flex items-center justify-center text-center px-1">
+            <h3 class="font-display text-xl md:text-2xl leading-tight tracking-tight-2">Architecture, kept intact</h3>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="657253197_18288910294304072_6204994067230472425_n..jpg" alt="Zentos Constructions detail" class="w-full h-full object-cover">
+        </div>
+        <div class="pri-card aspect-square rounded-xl bg-ink text-cloud p-6 md:p-7 flex flex-col">
+          <p class="eyebrow text-cloud/55">What guides us</p>
+          <div class="flex-1 flex items-center justify-center text-center px-1">
+            <h3 class="font-display text-xl md:text-2xl leading-tight tracking-tight-2">One point of contact, start to finish</h3>
+          </div>
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="490098050_18492465577006919_4542288024106492209_n..jpg" alt="Zentos Constructions project" class="w-full h-full object-cover">
+        </div>
+        <div class="aspect-square overflow-hidden rounded-xl">
+          <img src="652794078_17980226492989090_486920498555215911_n..jpg" alt="Zentos Constructions project" class="w-full h-full object-cover">
+        </div>
+
+      </div>
+
+      <!-- closing statement -->
+      <div class="max-w-3xl border-t border-ink/15 pt-6 mt-16 md:mt-24 reveal">
+        <p class="text-sm font-semibold text-ink mb-6">We keep our numbers small so our standards stay high.</p>
+        <p class="font-display text-2xl md:text-[2.1rem] leading-snug tracking-tight-2 fade-text">
+          Homeowners, developers and architects come to Zentos for the same reason: a builder who stays close to the detail, protects the design, and hands over a home that was worth the wait.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section id="services" class="bg-brand-dark text-cloud">
+    <div class="grid lg:grid-cols-2 lg:min-h-[92vh]">
+
+      <!-- left: dark panel -->
+      <div class="flex flex-col justify-between gap-14 lg:gap-10 p-8 sm:p-12 lg:p-16 order-2 lg:order-1">
+        <!-- section title -->
+        <h2 class="font-display uppercase tracking-tight-2 leading-[1.1] text-xl sm:text-2xl text-cloud/90">What we<br>build</h2>
+
+        <!-- selectable list -->
+        <ul class="space-y-3 md:space-y-4">
+          <li>
+            <button type="button" aria-current="true" class="wb-item flex items-center gap-4 md:gap-5 text-left w-full" data-img="649242456_17945679438129336_4454163457378815263_n..jpg" data-alt="Multi-unit development by Zentos Constructions" data-desc="Townhouses and multi-dwelling developments delivered end to end, balancing yield, buildability and a finish that holds its value.">
+              <span class="wb-arrow inline-flex w-9 h-9 rounded-full border border-cloud/60 items-center justify-center shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <span class="wb-label font-display uppercase tracking-tight-2 leading-[1.04] text-3xl sm:text-4xl lg:text-[2.6rem]">Multi-Unit Developments</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-current="false" class="wb-item flex items-center gap-4 md:gap-5 text-left w-full" data-img="651507451_17980982870991627_6316780572582392126_n..jpg" data-alt="Sloping block build by Zentos Constructions" data-desc="Difficult and steep sites are where we do our best work, turning challenging blocks into homes that make the most of the fall and the outlook.">
+              <span class="wb-arrow inline-flex w-9 h-9 rounded-full border border-cloud/60 items-center justify-center shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <span class="wb-label font-display uppercase tracking-tight-2 leading-[1.04] text-3xl sm:text-4xl lg:text-[2.6rem]">Sloping Block Builds</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-current="false" class="wb-item flex items-center gap-4 md:gap-5 text-left w-full" data-img="655204480_18087164551968882_6043593363337482051_n..jpg" data-alt="Architectural build by Zentos Constructions" data-desc="Considered, custom homes built alongside your architect and designer, protecting the detail rather than cutting corners.">
+              <span class="wb-arrow inline-flex w-9 h-9 rounded-full border border-cloud/60 items-center justify-center shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+              <span class="wb-label font-display uppercase tracking-tight-2 leading-[1.04] text-3xl sm:text-4xl lg:text-[2.6rem]">Architectural Builds</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- active description -->
+        <p id="wb-desc" class="text-sm sm:text-[0.95rem] text-cloud/70 leading-relaxed max-w-sm">Townhouses and multi-dwelling developments delivered end to end, balancing yield, buildability and a finish that holds its value.</p>
+      </div>
+
+      <!-- right: image -->
+      <div class="relative order-1 lg:order-2 min-h-[55vh] lg:min-h-0 overflow-hidden">
+        <img id="wb-image" src="649242456_17945679438129336_4454163457378815263_n..jpg" alt="Multi-unit development by Zentos Constructions" class="absolute inset-0 w-full h-full object-cover">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS / SELECTED PROJECTS -->
+  <section id="projects" class="bg-ink text-cloud">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <!-- top row -->
+      <div class="grid lg:grid-cols-2 gap-10 items-start reveal">
+        <div>
+          <p class="text-cloud font-medium text-lg">Selected Projects</p>
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight-2 text-cloud/45 leading-[1.12] mt-3 max-w-xl">Recent builds across metropolitan Melbourne.</h2>
+        </div>
+        <div class="lg:pl-16 lg:max-w-md lg:ml-auto">
+          <p class="text-cloud/70 text-[0.98rem] leading-relaxed">From multi-unit developments to architect-designed homes, every project reflects the same standard of craftsmanship and care.</p>
+          <a href="#contact" class="btn inline-flex items-center rounded-full border border-cloud/30 text-cloud text-xs font-semibold tracking-[0.15em] uppercase px-6 py-3 mt-6 hover:bg-cloud hover:text-ink transition-colors">Start a Project</a>
+        </div>
+      </div>
+
+      <!-- image row -->
+      <div class="grid md:grid-cols-3 gap-4 md:gap-5 mt-16 md:mt-20">
+        <a href="#contact" class="group block reveal">
+          <div class="flex items-center gap-2">
+            <h3 class="text-cloud text-lg font-medium">Elanor</h3>
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <p class="text-cloud/50 text-sm mt-1">Multi-unit development, Melbourne.</p>
+          <div class="mt-5 overflow-hidden">
+            <img src="490098050_18492465577006919_4542288024106492209_n..jpg" alt="Elanor project by Zentos Constructions" class="w-full h-[440px] sm:h-[520px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+          </div>
+        </a>
+        <a href="#contact" class="group block reveal">
+          <div class="flex items-center gap-2">
+            <h3 class="text-cloud text-lg font-medium">Wollert</h3>
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <p class="text-cloud/50 text-sm mt-1">Architect-designed family home.</p>
+          <div class="mt-5 overflow-hidden">
+            <img src="652794078_17980226492989090_486920498555215911_n..jpg" alt="Wollert project by Zentos Constructions" class="w-full h-[440px] sm:h-[520px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+          </div>
+        </a>
+        <a href="#contact" class="group block reveal">
+          <div class="flex items-center gap-2">
+            <h3 class="text-cloud text-lg font-medium">Highlander</h3>
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <p class="text-cloud/50 text-sm mt-1">Sloping block residence.</p>
+          <div class="mt-5 overflow-hidden">
+            <img src="656242200_18086323268520369_6776139075486445788_n..jpg" alt="Highlander project by Zentos Constructions" class="w-full h-[440px] sm:h-[520px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+          </div>
+        </a>
+      </div>
+      <p class="text-xs text-cloud/40 mt-8 italic">Project imagery for the mockup. Final selection and project details to be confirmed with Serkan.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS / HOW WE WORK -->
+  <section id="process" class="relative overflow-hidden bg-ink text-cloud">
+    <!-- background image + darkening overlays -->
+    <img src="657253197_18288910294304072_6204994067230472425_n..jpg" alt="Zentos Constructions project" class="absolute inset-0 w-full h-full object-cover" style="filter: brightness(0.48) saturate(1.05);">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-10 min-h-[46rem] lg:min-h-[52rem] flex flex-col py-16 md:py-20">
+      <!-- heading -->
+      <div class="max-w-xl reveal">
+        <p class="eyebrow text-cloud/60 mb-5">How we work</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl tracking-tight-2 leading-[1.05]">A clear path from concept to keys.</h2>
+        <p class="lead text-cloud/75 mt-6 max-w-md">From the first site walk to the final handover, every build follows a clear, transparent process, so you always know exactly where things stand.</p>
+      </div>
+
+      <!-- glass step cards -->
+      <div class="mt-auto pt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 reveal">
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md p-7 flex flex-col min-h-[300px]">
+          <div>
+            <div class="font-display font-normal text-cloud text-5xl leading-none">01</div>
+            <div class="mt-5 text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-cloud/80">Consult &amp; Design</div>
+            <div class="mt-4 h-px bg-white/20"></div>
+          </div>
+          <p class="mt-auto pt-10 text-cloud/70 text-[0.92rem] leading-relaxed">We sit down with you and your plans, walk the site, and scope the build honestly.</p>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md p-7 flex flex-col min-h-[300px]">
+          <div>
+            <div class="font-display font-normal text-cloud text-5xl leading-none">02</div>
+            <div class="mt-5 text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-cloud/80">Fixed Proposal</div>
+            <div class="mt-4 h-px bg-white/20"></div>
+          </div>
+          <p class="mt-auto pt-10 text-cloud/70 text-[0.92rem] leading-relaxed">A transparent, fixed-price contract with a realistic program. No surprises later.</p>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md p-7 flex flex-col min-h-[300px]">
+          <div>
+            <div class="font-display font-normal text-cloud text-5xl leading-none">03</div>
+            <div class="mt-5 text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-cloud/80">Build</div>
+            <div class="mt-4 h-px bg-white/20"></div>
+          </div>
+          <p class="mt-auto pt-10 text-cloud/70 text-[0.92rem] leading-relaxed">Quality trades, tight supervision, and regular updates so you always know where things are at.</p>
+        </div>
+        <div class="rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md p-7 flex flex-col min-h-[300px]">
+          <div>
+            <div class="font-display font-normal text-cloud text-5xl leading-none">04</div>
+            <div class="mt-5 text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-cloud/80">Handover</div>
+            <div class="mt-4 h-px bg-white/20"></div>
+          </div>
+          <p class="mt-auto pt-10 text-cloud/70 text-[0.92rem] leading-relaxed">A finished home walked through with you, backed by warranty and ongoing support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-white border-b border-ink/5">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal order-2 md:order-1">
+        <p class="eyebrow text-brand mb-4">Why Zentos</p>
+        <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 text-ink leading-tight">Boutique by choice, not by size.</h2>
+        <p class="lead text-ink/70 mt-6">
+          Being a boutique builder means we can be selective, hands-on and genuinely invested in every home we take on. You deal with the people actually running your build, decisions get made quickly, and the quality shows in the detail.
+        </p>
+        <p class="lead text-ink/70 mt-4">
+          Based in Docklands and building across metropolitan Melbourne, we bring the same care to a multi-unit development as we do to a one-off architectural home.
+        </p>
+        <a href="#contact" class="btn inline-flex items-center rounded-full bg-ink text-cloud font-semibold px-7 py-3.5 mt-8 hover:bg-brand-dark">Talk to us about your build</a>
+      </div>
+      <div class="reveal order-1 md:order-2">
+        <img src="656242200_18086323268520369_6776139075486445788_n..jpg" alt="Zentos Constructions project" class="w-full h-[520px] md:h-[640px] rounded-2xl object-cover card-shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section id="cta" class="relative overflow-hidden bg-ink">
+    <!-- background image + darkening overlays -->
+    <img src="655204480_18087164551968882_6043593363337482051_n..jpg" alt="Zentos Constructions architectural build" class="absolute inset-0 w-full h-full object-cover" style="filter: brightness(0.42) saturate(1.02);">
+    <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(16,19,26,0.82) 0%, rgba(16,19,26,0.55) 42%, rgba(16,19,26,0.12) 100%);"></div>
+    <!-- content -->
+    <div class="relative max-w-6xl mx-auto px-6 md:px-10 min-h-[72vh] md:min-h-[80vh] flex flex-col justify-center">
+      <h2 class="font-mono uppercase tracking-tight leading-[1.2] text-2xl sm:text-4xl lg:text-[3.1rem] max-w-3xl">
+        <span class="block text-cloud/55">Some blocks get called too hard.</span>
+        <span class="block text-cloud mt-4 md:mt-5">That's usually where we start.</span>
+      </h2>
+      <a href="#contact" class="group inline-flex items-center gap-3 font-mono uppercase text-sm md:text-base tracking-[0.06em] text-cloud mt-10 w-fit">
+        <span class="border-b border-cloud/60 pb-1 group-hover:border-cloud transition-colors">Start your build</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-cloud border-b border-ink/5">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28 grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16">
+
+      <!-- left: intro -->
+      <div class="reveal">
+        <p class="eyebrow text-brand mb-4">Good to know</p>
+        <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 text-ink leading-tight">Questions,<br>answered.</h2>
+        <p class="lead text-ink/65 mt-6 max-w-sm">A few of the things people ask before starting a build. If yours isn't here, just ask.</p>
+        <a href="#contact" class="btn inline-flex items-center gap-3 rounded-full bg-ink text-cloud font-semibold px-7 py-3.5 mt-8 hover:bg-brand-dark">
+          Ask a question
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- right: accordion -->
+      <div class="reveal border-t border-ink/10">
+
+        <details class="faq border-b border-ink/10">
+          <summary class="flex items-center justify-between gap-6 py-6">
+            <span class="font-display text-lg md:text-xl text-ink leading-snug">What kind of projects does Zentos take on?</span>
+            <svg class="faq-icon shrink-0 text-brand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <p class="text-ink/65 leading-relaxed max-w-xl pb-6 -mt-1">We focus on three things we do well: multi-unit developments, homes on sloping or constrained blocks, and one-off architectural builds. If your project sits across a couple of those, it is usually a good fit for us.</p>
+        </details>
+
+        <details class="faq border-b border-ink/10">
+          <summary class="flex items-center justify-between gap-6 py-6">
+            <span class="font-display text-lg md:text-xl text-ink leading-snug">Do you work alongside my architect and designer?</span>
+            <svg class="faq-icon shrink-0 text-brand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <p class="text-ink/65 leading-relaxed max-w-xl pb-6 -mt-1">Yes. A lot of our work comes from homes that have already been designed, and our job is to build them the way they were drawn, protecting the detail rather than trimming it back. We are just as happy to come in early and work through documentation with your team.</p>
+        </details>
+
+        <details class="faq border-b border-ink/10">
+          <summary class="flex items-center justify-between gap-6 py-6">
+            <span class="font-display text-lg md:text-xl text-ink leading-snug">Can you build on a difficult or sloping site?</span>
+            <svg class="faq-icon shrink-0 text-brand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <p class="text-ink/65 leading-relaxed max-w-xl pb-6 -mt-1">Sloping and tight sites are one of our specialities. They take more planning and a builder who is comfortable with the engineering, which is exactly the kind of project we like to take on.</p>
+        </details>
+
+        <details class="faq border-b border-ink/10">
+          <summary class="flex items-center justify-between gap-6 py-6">
+            <span class="font-display text-lg md:text-xl text-ink leading-snug">How involved will I be during the build?</span>
+            <svg class="faq-icon shrink-0 text-brand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <p class="text-ink/65 leading-relaxed max-w-xl pb-6 -mt-1">As involved as you want to be. Because we deliberately keep our numbers small, you deal directly with the people actually running your build, so questions get answered quickly and you always know where things are up to.</p>
+        </details>
+
+        <details class="faq border-b border-ink/10">
+          <summary class="flex items-center justify-between gap-6 py-6">
+            <span class="font-display text-lg md:text-xl text-ink leading-snug">Which areas do you build in?</span>
+            <svg class="faq-icon shrink-0 text-brand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <p class="text-ink/65 leading-relaxed max-w-xl pb-6 -mt-1">We are based in Docklands and build across metropolitan Melbourne. If you are not sure whether your site is in our area, get in touch and we will let you know.</p>
+        </details>
+
+        <details class="faq border-b border-ink/10">
+          <summary class="flex items-center justify-between gap-6 py-6">
+            <span class="font-display text-lg md:text-xl text-ink leading-snug">How do we get started?</span>
+            <svg class="faq-icon shrink-0 text-brand" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
+          </summary>
+          <p class="text-ink/65 leading-relaxed max-w-xl pb-6 -mt-1">The easiest first step is a conversation about your site, your plans and what you are hoping to build. Send through the enquiry form or give us a call, and we will take it from there.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT + FOOTER -->
+  <footer id="contact" class="bg-white text-ink border-t border-ink/10">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 pt-20 md:pt-24 pb-10">
+      <!-- centered logo -->
+      <div class="text-center">
+        <div class="inline-flex items-center justify-center">
+          <img src="Logo.jpg" alt="Zentos Constructions" class="h-16 w-auto" style="mix-blend-mode: multiply;">
+        </div>
+        <p class="text-sm font-semibold tracking-[0.12em] uppercase text-ink/75 mt-6">Boutique Residential Builder</p>
+      </div>
+
+      <!-- main: left info + right form -->
+      <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 mt-16 md:mt-24">
+        <!-- left column -->
+        <div>
+          <h3 class="font-display text-2xl md:text-3xl leading-snug">Considered homes, built with intent.</h3>
+          <p class="text-ink/55 mt-4 max-w-sm leading-relaxed">A Melbourne boutique builder specialising in multi-unit developments, sloping block builds and architectural homes.</p>
+
+          <!-- socials -->
+          <div class="flex items-center gap-3 mt-8">
+            <a href="https://instagram.com/zentosconstructions" target="_blank" rel="noopener" aria-label="Instagram" class="w-11 h-11 rounded-full border border-ink/15 flex items-center justify-center hover:bg-ink hover:text-white transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full border border-ink/15 flex items-center justify-center hover:bg-ink hover:text-white transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg>
+            </a>
+          </div>
+
+          <!-- contact details + pages -->
+          <div class="grid sm:grid-cols-2 gap-10 mt-14 text-sm">
+            <div class="space-y-8">
+              <div>
+                <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-3">General enquiries</p>
+                <div class="space-y-1.5">
+                  <a href="tel:0393524720" class="block text-ink/80 hover:text-ink">(03) 9352 4720</a>
+                  <a href="tel:0451060586" class="block text-ink/80 hover:text-ink">0451 060 586</a>
+                  <a href="mailto:serkan@zentos.com.au" class="block text-ink/80 hover:text-ink">serkan@zentos.com.au</a>
+                </div>
+              </div>
+              <div>
+                <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-3">Office</p>
+                <p class="text-ink/80 leading-relaxed">Suite 1214, 401 Docklands Drive,<br>Docklands VIC 3008</p>
+              </div>
+            </div>
+            <div>
+              <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-4">Pages</p>
+              <ul class="space-y-3 font-display text-xl">
+                <li><a href="#top" class="text-ink/80 hover:text-brand">Home</a></li>
+                <li><a href="#services" class="text-ink/80 hover:text-brand">What We Build</a></li>
+                <li><a href="#projects" class="text-ink/80 hover:text-brand">Projects</a></li>
+                <li><a href="#about" class="text-ink/80 hover:text-brand">About</a></li>
+                <li><a href="#contact" class="text-ink/80 hover:text-brand">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- right: contact form panel -->
+        <div class="rounded-2xl bg-cloud border border-ink/10 p-8 md:p-10 card-shadow">
+          <form action="#" method="POST" class="space-y-9">
+            <div class="relative">
+              <select name="project_type" class="w-full bg-transparent border-b border-ink/20 py-3 pr-8 text-ink focus:border-ink outline-none appearance-none">
+                <option value="" class="text-ink">Select type of request</option>
+                <option class="text-ink">Multi-unit development</option>
+                <option class="text-ink">Sloping block build</option>
+                <option class="text-ink">Architectural / custom home</option>
+                <option class="text-ink">Not sure yet</option>
+              </select>
+              <svg class="absolute right-0 top-4 pointer-events-none text-ink/60" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+            <input type="text" name="name" required placeholder="Name" class="w-full bg-transparent border-b border-ink/20 py-3 text-ink placeholder-ink/40 focus:border-ink outline-none">
+            <input type="email" name="email" required placeholder="Email" class="w-full bg-transparent border-b border-ink/20 py-3 text-ink placeholder-ink/40 focus:border-ink outline-none">
+            <div class="relative">
+              <textarea name="message" rows="2" placeholder="Message" class="w-full bg-transparent border-b border-ink/20 py-3 pr-20 text-ink placeholder-ink/40 focus:border-ink outline-none resize-none"></textarea>
+              <span class="absolute right-0 top-3 text-ink/40 text-sm">Optional</span>
+            </div>
+            <label class="flex items-start gap-3 text-sm text-ink/65 leading-relaxed">
+              <input type="checkbox" class="mt-1 w-4 h-4 shrink-0 accent-brand">
+              <span>By submitting this form, I agree to the collection and use of my personal data as per the <a href="#" class="underline hover:text-ink">Privacy Policy</a>.</span>
+            </label>
+            <div class="flex items-center justify-between gap-4 pt-2">
+              <button type="submit" class="btn rounded-full bg-ink text-white font-semibold px-8 py-3.5 hover:bg-brand-dark transition-colors">Send Message</button>
+              <p class="text-xs text-ink/40">Placeholder, not yet connected.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- bottom bar -->
+      <div class="border-t border-ink/10 mt-16 md:mt-20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink/45">
+        <p>&copy; <span id="year"></span> Zentos Constructions Pty Ltd. All rights reserved. Website by Sutera Sites.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-ink">Privacy Policy</a>
+          <a href="#" class="hover:text-ink">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav background on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('nav-shadow', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => el.classList.add('reveal-hidden'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('reveal-show');
+          e.target.classList.remove('reveal-hidden');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+
+    // What We Build split-screen selector
+    (function () {
+      const items = Array.from(document.querySelectorAll('.wb-item'));
+      if (!items.length) return;
+      const img = document.getElementById('wb-image');
+      const desc = document.getElementById('wb-desc');
+      const select = (el) => {
+        if (el.getAttribute('aria-current') === 'true') return;
+        items.forEach(b => b.setAttribute('aria-current', b === el ? 'true' : 'false'));
+        if (desc) desc.textContent = el.dataset.desc;
+        if (img && el.dataset.img) {
+          img.style.opacity = '0';
+          const pre = new Image();
+          pre.onload = () => { img.src = el.dataset.img; img.alt = el.dataset.alt || ''; img.style.opacity = '1'; };
+          pre.src = el.dataset.img;
+        }
+      };
+      items.forEach(b => {
+        b.addEventListener('click', () => select(b));
+        b.addEventListener('mouseenter', () => select(b));
+      });
+    })();
+
+    // Mega menu
+    (function () {
+      const trigger = document.getElementById('mega-trigger');
+      const mega = document.getElementById('mega');
+      if (!trigger || !mega) return;
+      let t;
+      const open = () => { clearTimeout(t); mega.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); };
+      const close = () => { t = setTimeout(() => { mega.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }, 140); };
+      [trigger, mega].forEach(el => { el.addEventListener('mouseenter', open); el.addEventListener('mouseleave', close); });
+      mega.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { clearTimeout(t); mega.classList.remove('open'); trigger.setAttribute('aria-expanded', 'false'); }));
+    })();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
