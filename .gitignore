@@ -1,9 +1,7 @@
 # Internal build brief - not part of the public site
 CLAUDE.md
 
-# Unused / superseded hero videos (only "Zentos Hero Intro (NEW).mp4" is live)
-Intro.mp4
-Zenos Hero Intro.mp4
-Zentos Hero Intro.mov
+# Superseded / raw source videos - not deployed (large source files)
+assets/video/_unused/
 
 .DS_Store
