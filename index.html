@@ -131,6 +131,10 @@
     /* Featured project hover-preview videos (play on hover, tap on touch) */
     .fp-card.is-touch-active .fp-video { opacity: 1; }
     @media (prefers-reduced-motion: reduce) { .fp-video { display: none; } }
+    /* Sound toggle icon: muted icon by default, sound icon when unmuted */
+    .fp-sound-toggle .fp-sound-on { display: none; }
+    .fp-sound-toggle[aria-pressed="false"] .fp-sound-off { display: none; }
+    .fp-sound-toggle[aria-pressed="false"] .fp-sound-on { display: inline; }
   </style>
 </head>
 <body class="bg-cloud antialiased">
@@ -429,7 +433,16 @@
       <!-- top row -->
       <div class="grid lg:grid-cols-2 gap-10 items-start reveal">
         <div>
-          <p class="text-cloud font-medium text-lg">Selected Projects</p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p class="text-cloud font-medium text-lg">Selected Projects</p>
+            <button type="button" id="fp-sound-toggle" aria-pressed="true" aria-label="Unmute project videos" class="fp-sound-toggle inline-flex items-center gap-2 rounded-full border border-cloud/30 text-cloud/75 text-[0.68rem] font-semibold tracking-[0.14em] uppercase px-3.5 py-1.5 hover:bg-cloud hover:text-ink transition-colors">
+              <span class="fp-sound-icon inline-flex" aria-hidden="true">
+                <svg class="fp-sound-off" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg class="fp-sound-on" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              </span>
+              <span class="fp-sound-label">Sound off</span>
+            </button>
+          </div>
           <h2 class="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight-2 text-cloud/45 leading-[1.12] mt-3 max-w-xl">Recent builds across metropolitan Melbourne.</h2>
         </div>
         <div class="lg:pl-16 lg:max-w-md lg:ml-auto">
@@ -748,12 +761,39 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Featured project hover-preview videos (play on hover, tap-to-toggle on touch)
+    // Featured project hover-preview videos with a shared mute/unmute toggle.
+    // Browsers block unmuted autoplay until the user interacts, so previews start
+    // muted and the toggle (a real click) opts sound in for subsequent plays.
     (function () {
       const isTouch = window.matchMedia('(hover: none)').matches;
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const cards = Array.from(document.querySelectorAll('.fp-card'));
-      const play = (v) => { if (reduce) return; const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      const toggle = document.getElementById('fp-sound-toggle');
+      let muted = true;
+
+      function updateToggleUI() {
+        if (!toggle) return;
+        toggle.setAttribute('aria-pressed', muted ? 'true' : 'false');
+        toggle.setAttribute('aria-label', muted ? 'Unmute project videos' : 'Mute project videos');
+        const label = toggle.querySelector('.fp-sound-label');
+        if (label) label.textContent = muted ? 'Sound off' : 'Sound on';
+      }
+
+      function play(video) {
+        if (reduce) return;
+        video.muted = muted;
+        const p = video.play();
+        if (p && p.catch) p.catch(() => { video.muted = true; const f = video.play(); if (f && f.catch) f.catch(() => {}); });
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          muted = !muted;
+          updateToggleUI();
+          cards.forEach((c) => { const v = c.querySelector('.fp-video'); if (v && !v.paused) v.muted = muted; });
+        });
+      }
+
       cards.forEach((card) => {
         const video = card.querySelector('.fp-video');
         if (!video) return;
