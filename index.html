@@ -128,6 +128,9 @@
       .pri-grid > :not(:first-child) { display: none; }
       .pri-close { display: none; }
     }
+    /* Featured project hover-preview videos (play on hover, tap on touch) */
+    .fp-card.is-touch-active .fp-video { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { .fp-video { display: none; } }
   </style>
 </head>
 <body class="bg-cloud antialiased">
@@ -437,24 +440,30 @@
 
       <!-- image row -->
       <div class="grid md:grid-cols-2 gap-4 md:gap-5 mt-16 md:mt-20">
-        <a href="#contact" class="group block reveal">
+        <a href="#contact" class="fp-card group block reveal">
           <div class="flex items-center gap-2">
             <h3 class="text-cloud text-lg font-medium">Project Elanor</h3>
             <svg class="transition-transform duration-300 group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
           <p class="text-cloud/50 text-sm mt-1">Sunbury, Victoria.</p>
-          <div class="mt-5 overflow-hidden">
+          <div class="mt-5 overflow-hidden relative">
             <img src="assets/images/project-elanor.jpg" alt="Project Elanor, Sunbury, by Zentos Constructions" class="w-full h-[440px] sm:h-[520px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+            <video class="fp-video absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" muted loop playsinline preload="none" poster="assets/images/project-elanor.jpg" aria-hidden="true">
+              <source src="assets/video/project-elanor.mp4" type="video/mp4">
+            </video>
           </div>
         </a>
-        <a href="#contact" class="group block reveal">
+        <a href="#contact" class="fp-card group block reveal">
           <div class="flex items-center gap-2">
             <h3 class="text-cloud text-lg font-medium">Project Timbarra</h3>
             <svg class="transition-transform duration-300 group-hover:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </div>
           <p class="text-cloud/50 text-sm mt-1">Wollert, Victoria.</p>
-          <div class="mt-5 overflow-hidden">
+          <div class="mt-5 overflow-hidden relative">
             <img src="assets/images/project-timbarra.jpg" alt="Project Timbarra, Wollert, by Zentos Constructions" class="w-full h-[440px] sm:h-[520px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+            <video class="fp-video absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" muted loop playsinline preload="none" poster="assets/images/project-timbarra.jpg" aria-hidden="true">
+              <source src="assets/video/project-timbarra.mp4" type="video/mp4">
+            </video>
           </div>
         </a>
       </div>
@@ -738,6 +747,41 @@
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Featured project hover-preview videos (play on hover, tap-to-toggle on touch)
+    (function () {
+      const isTouch = window.matchMedia('(hover: none)').matches;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const cards = Array.from(document.querySelectorAll('.fp-card'));
+      const play = (v) => { if (reduce) return; const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      cards.forEach((card) => {
+        const video = card.querySelector('.fp-video');
+        if (!video) return;
+        if (!isTouch) {
+          card.addEventListener('mouseenter', () => play(video));
+          card.addEventListener('mouseleave', () => video.pause());
+          return;
+        }
+        // Touch: first tap plays the preview, tapping again (or another card) stops it.
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          const active = card.classList.contains('is-touch-active');
+          cards.forEach((c) => {
+            if (c === card) return;
+            c.classList.remove('is-touch-active');
+            const v = c.querySelector('.fp-video');
+            if (v) { v.pause(); try { v.currentTime = 0; } catch (err) {} }
+          });
+          if (active) {
+            card.classList.remove('is-touch-active');
+            video.pause(); try { video.currentTime = 0; } catch (err) {}
+          } else {
+            card.classList.add('is-touch-active');
+            play(video);
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
