@@ -12,15 +12,15 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#2f5fa3">
 
-  <title>Medium Density Builds | Zentos Constructions, Melbourne</title>
-  <meta name="description" content="Zentos Constructions builds medium density projects across Melbourne: low-rise apartments and townhouse clusters that lift density without losing a considered, residential feel.">
-  <meta name="keywords" content="medium density builder Melbourne, low rise apartment builder, townhouse cluster developer, walk up apartment builder Melbourne">
+  <title>Project Elanor | Sunbury | Zentos Constructions</title>
+  <meta name="description" content="Project Elanor by Zentos Constructions in Sunbury, Victoria. Watch the walkthrough of this boutique residential build across metropolitan Melbourne.">
+  <meta name="keywords" content="Project Elanor, Zentos Constructions Sunbury, Sunbury builder, boutique residential build Melbourne">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.zentos.com.au/medium-density-builds">
+  <link rel="canonical" href="https://www.zentos.com.au/project-elanor">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Medium Density Builds | Zentos Constructions, Melbourne">
-  <meta property="og:description" content="Zentos Constructions builds medium density projects across Melbourne: low-rise apartments and townhouse clusters that lift density without losing a considered, residential feel.">
+  <meta property="og:title" content="Project Elanor | Sunbury | Zentos Constructions">
+  <meta property="og:description" content="Project Elanor by Zentos Constructions in Sunbury, Victoria. Watch the walkthrough of this boutique residential build.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
 
@@ -31,8 +31,8 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.zentos.com.au/" },
-      { "@type": "ListItem", "position": 2, "name": "What We Build", "item": "https://www.zentos.com.au/what-we-build" },
-      { "@type": "ListItem", "position": 3, "name": "Medium Density Builds", "item": "https://www.zentos.com.au/medium-density-builds" }
+      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.zentos.com.au/projects" },
+      { "@type": "ListItem", "position": 3, "name": "Project Elanor", "item": "https://www.zentos.com.au/project-elanor" }
     ]
   }
   </script>
@@ -76,9 +76,12 @@
     .reveal-hidden { opacity: 0; transform: translateY(18px); }
     .reveal-show { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
     .nav-shadow { box-shadow: 0 10px 30px -20px rgba(21,24,29,0.4); }
-    .chip { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
     /* Grey image placeholders (awaiting Serkan's photography) */
     .ph { background-color: #e8e5e0; background-image: linear-gradient(135deg, rgba(21,24,29,0.03) 25%, transparent 25%, transparent 50%, rgba(21,24,29,0.03) 50%, rgba(21,24,29,0.03) 75%, transparent 75%, transparent); background-size: 22px 22px; color: #a29c92; }
+    /* Sound toggle icon swap */
+    .fp-sound-toggle .fp-sound-on { display: none; }
+    .fp-sound-toggle[aria-pressed="false"] .fp-sound-off { display: none; }
+    .fp-sound-toggle[aria-pressed="false"] .fp-sound-on { display: inline; }
     /* Mega menu */
     .mega { opacity: 0; visibility: hidden; transform: translateY(8px); pointer-events: none;
             transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
@@ -87,7 +90,6 @@
     #mega-chevron { transition: transform .25s ease; }
     .mega-wrap:hover #mega-chevron { transform: rotate(180deg); }
     @media (max-width: 1023.98px) { .mega { display: none; } }
-    /* offset in-page anchors so they clear the fixed header */
     [id] { scroll-margin-top: 96px; }
   </style>
 </head>
@@ -104,9 +106,9 @@
         <span class="text-sm font-medium text-ink">Melbourne, VIC</span>
       </div>
       <nav class="hidden lg:flex items-center gap-8 px-8 border-l border-ink/10 text-sm font-medium text-ink/75">
-        <a href="projects.html" class="link-underline hover:text-ink">Projects</a>
+        <a href="projects.html" class="link-underline text-brand font-semibold">Projects</a>
         <div class="mega-wrap group flex items-center h-full">
-          <a id="mega-trigger" href="what-we-build.html" aria-haspopup="true" class="link-underline text-ink font-semibold inline-flex items-center gap-1.5">
+          <a id="mega-trigger" href="what-we-build.html" aria-haspopup="true" class="link-underline hover:text-ink inline-flex items-center gap-1.5">
             What We Build
             <svg id="mega-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </a>
@@ -186,8 +188,8 @@
     <div id="mobileMenu" class="lg:hidden hidden bg-cloud/98 backdrop-blur border-t border-ink/10">
       <nav class="px-6 py-4 flex flex-col gap-3 text-ink font-medium">
         <a href="about.html" class="py-1">About</a>
-        <a href="what-we-build.html" class="py-1 text-brand font-semibold">What We Build</a>
-        <a href="projects.html" class="py-1">Projects</a>
+        <a href="what-we-build.html" class="py-1">What We Build</a>
+        <a href="projects.html" class="py-1 text-brand font-semibold">Projects</a>
         <a href="process.html" class="py-1">Process</a>
         <a href="product-showroom.html" class="py-1">Product Showroom</a>
         <a href="index.html#contact" class="py-1">Contact</a>
@@ -198,107 +200,93 @@
   </header>
 
   <!-- PAGE HERO -->
-  <section class="bg-cloud pt-32 md:pt-40 pb-14 md:pb-16">
+  <section class="bg-cloud pt-32 md:pt-40 pb-8 md:pb-10">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <nav class="text-xs text-ink/45 mb-8" aria-label="Breadcrumb">
         <a href="index.html" class="hover:text-ink">Home</a>
         <span class="mx-2">/</span>
-        <a href="what-we-build.html" class="hover:text-ink">What We Build</a>
+        <a href="projects.html" class="hover:text-ink">Projects</a>
         <span class="mx-2">/</span>
-        <span class="text-ink/70">Medium Density Builds</span>
+        <span class="text-ink/70">Project Elanor</span>
       </nav>
-      <p class="eyebrow text-brand mb-5">What We Build &middot; 02</p>
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight-2 leading-[1.04] max-w-4xl">Medium Density Builds</h1>
-      <p class="lead text-ink/70 mt-7 max-w-2xl">Low-rise apartment and townhouse projects that lift density without losing a considered, residential feel. We build to the amenity, the streetscape and the numbers, so the result works for residents and for the project.</p>
+      <p class="eyebrow text-brand mb-5">Project</p>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight-2 leading-[1.04] max-w-4xl">Project Elanor</h1>
+      <p class="lead text-ink/70 mt-6 max-w-2xl">A recent Zentos Constructions build in Sunbury, Victoria. Watch the walkthrough below.</p>
+    </div>
+  </section>
 
-      <div class="flex flex-wrap items-center gap-4 mt-9">
-        <a href="index.html#contact" class="btn inline-flex items-center gap-2.5 rounded-full bg-ink text-cloud font-semibold px-7 py-3.5 hover:bg-brand-dark">
-          Start your build
+  <!-- SHOWCASE -->
+  <section class="bg-cloud pb-20 md:pb-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="grid lg:grid-cols-[minmax(0,460px)_1fr] gap-10 lg:gap-16 items-start">
+        <!-- video -->
+        <div class="reveal">
+          <div class="relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-[4/5]">
+            <video id="project-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+              <source src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/project-elanor.mp4" type="video/mp4">
+            </video>
+          </div>
+          <button type="button" id="fp-sound-toggle" aria-pressed="true" aria-label="Unmute walkthrough" class="fp-sound-toggle inline-flex items-center gap-2 rounded-full border border-ink/15 text-ink/70 text-[0.68rem] font-semibold tracking-[0.14em] uppercase px-3.5 py-1.5 mt-4 hover:bg-ink hover:text-cloud transition-colors">
+            <span class="fp-sound-icon inline-flex" aria-hidden="true">
+              <svg class="fp-sound-off" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+              <svg class="fp-sound-on" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            </span>
+            <span class="fp-sound-label">Sound off</span>
+          </button>
+        </div>
+        <!-- details -->
+        <div class="reveal">
+          <h2 class="font-display text-2xl md:text-3xl tracking-tight-2 leading-tight">About this project</h2>
+          <p class="lead text-ink/70 mt-5 max-w-xl">Project Elanor is one of our selected recent builds across metropolitan Melbourne. The walkthrough gives a feel for the finish and the care that goes into every Zentos project. Full project details and photography will be added soon.</p>
+          <dl class="grid grid-cols-2 gap-x-8 gap-y-6 mt-9 max-w-md">
+            <div>
+              <dt class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40">Location</dt>
+              <dd class="text-ink/80 mt-1.5">Sunbury, Victoria</dd>
+            </div>
+            <div>
+              <dt class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40">Builder</dt>
+              <dd class="text-ink/80 mt-1.5">Zentos Constructions</dd>
+            </div>
+          </dl>
+          <div class="flex flex-wrap items-center gap-4 mt-9">
+            <a href="index.html#contact" class="btn inline-flex items-center gap-2.5 rounded-full bg-ink text-cloud font-semibold px-7 py-3.5 hover:bg-brand-dark">
+              Start a project
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="projects.html" class="btn inline-flex items-center gap-2.5 rounded-full border border-ink/15 text-ink font-semibold px-7 py-3.5 hover:bg-ink hover:text-cloud">All projects</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- gallery placeholders -->
+      <div class="mt-16 md:mt-20">
+        <div class="flex items-end justify-between gap-6 mb-6">
+          <h2 class="font-display text-2xl md:text-3xl tracking-tight-2 leading-tight">Gallery</h2>
+          <p class="text-sm text-ink/45 shrink-0">Photography to come</p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4 md:gap-5">
+          <div class="ph rounded-2xl flex items-center justify-center h-56 reveal"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="M21 16l-5-5L5 20"/></svg></div>
+          <div class="ph rounded-2xl flex items-center justify-center h-56 reveal"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="M21 16l-5-5L5 20"/></svg></div>
+          <div class="ph rounded-2xl flex items-center justify-center h-56 reveal"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="M21 16l-5-5L5 20"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT PROJECT -->
+  <section class="bg-white border-t border-ink/10">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-16">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+        <div>
+          <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-2">Next project</p>
+          <a href="project-timbarra.html" class="font-display text-2xl md:text-3xl text-ink hover:text-brand transition-colors">Project Timbarra</a>
+          <p class="text-ink/55 text-sm mt-1">Wollert, Victoria</p>
+        </div>
+        <a href="project-timbarra.html" class="btn inline-flex items-center gap-2.5 rounded-full border border-ink/15 text-ink font-semibold px-7 py-3.5 hover:bg-ink hover:text-cloud w-fit shrink-0">
+          View project
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="what-we-build.html" class="btn inline-flex items-center gap-2.5 rounded-full border border-ink/15 text-ink font-semibold px-7 py-3.5 hover:bg-ink hover:text-cloud">All build types</a>
       </div>
-    </div>
-  </section>
-
-  <!-- HERO IMAGE BAND -->
-  <div class="max-w-6xl mx-auto px-6 md:px-10">
-    <div class="ph rounded-2xl card-shadow flex items-center justify-center h-[38vh] md:h-[52vh]"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/></svg></div>
-  </div>
-
-  <!-- OVERVIEW -->
-  <section class="bg-cloud">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div class="reveal">
-          <p class="eyebrow text-brand mb-4">Overview</p>
-          <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">Medium Density Builds</h2>
-          <p class="lead text-ink/70 mt-5 max-w-xl">Medium density is its own discipline: more dwellings, shared services and common areas, and a streetscape that still has to read as somewhere people want to live. We plan the build around amenity and long-term maintenance, not just the yield, and hold the finish to the same standard as the rest of our work.</p>
-          <ul class="mt-8 space-y-3.5 text-ink/75">
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Walk-up apartments and larger townhouse clusters</span></li>
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Planning-compliant layouts that keep amenity front of mind</span></li>
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Shared services and common areas built for low maintenance</span></li>
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A streetscape that reads residential, not institutional</span></li>
-          </ul>
-        </div>
-        <div class="ph rounded-2xl card-shadow flex items-center justify-center min-h-[360px] md:min-h-[460px]"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/></svg></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PILLARS -->
-  <section class="bg-white border-y border-ink/10">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
-      <div class="max-w-3xl reveal">
-        <p class="eyebrow text-brand mb-4">Why Zentos</p>
-        <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">What you can count on.</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6 md:gap-7 mt-12">
-        <div class="bg-white rounded-2xl border border-ink/10 card-shadow p-7 md:p-8 reveal">
-          <h3 class="font-display text-xl md:text-2xl">Amenity first</h3>
-          <p class="text-ink/65 mt-3 leading-relaxed">Layouts, light and shared spaces planned so residents genuinely enjoy living there, not just so the numbers work on paper.</p>
-        </div>
-        <div class="bg-white rounded-2xl border border-ink/10 card-shadow p-7 md:p-8 reveal">
-          <h3 class="font-display text-xl md:text-2xl">Built for the long run</h3>
-          <p class="text-ink/65 mt-3 leading-relaxed">Common areas and shared services detailed for durability and low maintenance, protecting value long after handover.</p>
-        </div>
-        <div class="bg-white rounded-2xl border border-ink/10 card-shadow p-7 md:p-8 reveal">
-          <h3 class="font-display text-xl md:text-2xl">Numbers that work</h3>
-          <p class="text-ink/65 mt-3 leading-relaxed">A considered residential outcome delivered to a developer's budget and program, with buildability checked before the drawings lock.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OTHER BUILDS -->
-  <section class="bg-cloud">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-20">
-      <div class="flex items-end justify-between gap-6 mb-8">
-        <div>
-          <p class="eyebrow text-brand mb-3">More of what we build</p>
-          <h2 class="font-display text-2xl md:text-3xl tracking-tight-2 leading-tight">Other build types</h2>
-        </div>
-        <a href="what-we-build.html" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-brand shrink-0">View all<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <a href="multi-unit-developments.html" class="group/o flex items-center justify-between gap-4 bg-cloud rounded-xl border border-ink/10 px-5 py-4 hover:border-brand/40"><span class="font-display text-lg text-ink">Multi-Unit Developments</span><svg class="text-brand transition-transform group-hover/o:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="sloping-block-builds.html" class="group/o flex items-center justify-between gap-4 bg-cloud rounded-xl border border-ink/10 px-5 py-4 hover:border-brand/40"><span class="font-display text-lg text-ink">Sloping Block Builds</span><svg class="text-brand transition-transform group-hover/o:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="architectural-builds.html" class="group/o flex items-center justify-between gap-4 bg-cloud rounded-xl border border-ink/10 px-5 py-4 hover:border-brand/40"><span class="font-display text-lg text-ink">Architectural Builds</span><svg class="text-brand transition-transform group-hover/o:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-ink text-cloud">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-      <div>
-        <h2 class="font-display text-3xl md:text-5xl tracking-tight-2 leading-tight max-w-2xl">Have a site or a set of plans?</h2>
-        <p class="text-cloud/70 mt-5 max-w-lg leading-relaxed">Tell us about the project and we will let you know how we would approach it. Call <a href="tel:0393524720" class="text-cloud underline decoration-cloud/30 underline-offset-4 hover:decoration-cloud">(03) 9352 4720</a> or send us a note.</p>
-      </div>
-      <a href="index.html#contact" class="btn inline-flex items-center gap-3 rounded-full bg-cloud text-ink font-semibold px-8 py-4 hover:bg-brand hover:text-cloud w-fit shrink-0">
-        Start your build
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
     </div>
   </section>
 
@@ -367,7 +355,9 @@
         </div>
 
         <!-- right: photo panel (placeholder) -->
-        <div class="ph relative rounded-2xl overflow-hidden card-shadow min-h-[420px] flex items-center justify-center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/></svg></div>
+        <div class="ph relative rounded-2xl overflow-hidden card-shadow min-h-[420px] flex items-center justify-center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/></svg>
+        </div>
       </div>
 
       <!-- bottom bar -->
@@ -410,6 +400,24 @@
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Walkthrough video: autoplays muted; the sound toggle (a real click) unmutes.
+    (function () {
+      const video = document.getElementById('project-video');
+      const toggle = document.getElementById('fp-sound-toggle');
+      let muted = true;
+      if (!video || !toggle) return;
+      toggle.addEventListener('click', () => {
+        muted = !muted;
+        video.muted = muted;
+        toggle.setAttribute('aria-pressed', muted ? 'true' : 'false');
+        toggle.setAttribute('aria-label', muted ? 'Unmute walkthrough' : 'Mute walkthrough');
+        const label = toggle.querySelector('.fp-sound-label');
+        if (label) label.textContent = muted ? 'Sound off' : 'Sound on';
+        const p = video.play();
+        if (p && p.catch) p.catch(() => {});
+      });
+    })();
   </script>
 </body>
 </html>
