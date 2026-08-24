@@ -12,15 +12,15 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#2f5fa3">
 
-  <title>Architectural Builds | Zentos Constructions, Melbourne</title>
-  <meta name="description" content="Zentos Constructions builds architect-designed custom homes across Melbourne. Work with your own architect or ours, with the detail protected from drawings to handover.">
-  <meta name="keywords" content="architectural builder Melbourne, custom home builder, design and construct Melbourne, architect designed home builder">
+  <title>Contact | Zentos Constructions, Melbourne</title>
+  <meta name="description" content="Talk to Zentos Constructions about your build. Call (03) 9352 4720, email enquiries@zentos.com.au, or send an enquiry. Boutique builder of multi-unit developments, medium density, sloping block and architectural homes across Melbourne. Showroom in Docklands by appointment.">
+  <meta name="keywords" content="contact Zentos Constructions, Melbourne builder contact, boutique builder Docklands, building enquiry Melbourne, get a building quote Melbourne">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.zentos.com.au/architectural-builds">
+  <link rel="canonical" href="https://www.zentos.com.au/contact">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Architectural Builds | Zentos Constructions, Melbourne">
-  <meta property="og:description" content="Zentos Constructions builds architect-designed custom homes across Melbourne. Work with your own architect or ours, with the detail protected from drawings to handover.">
+  <meta property="og:title" content="Contact | Zentos Constructions, Melbourne">
+  <meta property="og:description" content="Talk to us about your build. Call, email, or send an enquiry and we will come back to you.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
 
@@ -31,8 +31,31 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.zentos.com.au/" },
-      { "@type": "ListItem", "position": 2, "name": "What We Build", "item": "https://www.zentos.com.au/what-we-build" },
-      { "@type": "ListItem", "position": 3, "name": "Architectural Builds", "item": "https://www.zentos.com.au/architectural-builds" }
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.zentos.com.au/contact" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "Zentos Constructions",
+    "url": "https://www.zentos.com.au/",
+    "telephone": "+61393524720",
+    "email": "enquiries@zentos.com.au",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Suite 1214, 401 Docklands Drive",
+      "addressLocality": "Docklands",
+      "addressRegion": "VIC",
+      "postalCode": "3008",
+      "addressCountry": "AU"
+    },
+    "areaServed": "Melbourne, Victoria, Australia",
+    "sameAs": [
+      "https://instagram.com/zentosconstructions",
+      "https://www.facebook.com/zentosconstructions",
+      "https://www.youtube.com/@ZentosConstructions"
     ]
   }
   </script>
@@ -85,6 +108,16 @@
     #mega-chevron { transition: transform .25s ease; }
     .mega-wrap:hover #mega-chevron { transform: rotate(180deg); }
     @media (max-width: 1023.98px) { .mega { display: none; } }
+    /* Contact form */
+    .fld { width: 100%; background: #fff; border: 1px solid rgba(21,24,29,0.14); border-radius: 0.75rem;
+           padding: 0.85rem 1rem; font-size: 0.95rem; color: #15181d; transition: border-color .18s ease, box-shadow .18s ease; }
+    .fld::placeholder { color: rgba(21,24,29,0.38); }
+    .fld:focus { outline: none; border-color: #2f5fa3; box-shadow: 0 0 0 3px rgba(47,95,163,0.13); }
+    .fld:user-invalid { border-color: #b4453c; }
+    select.fld { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2315181d' stroke-opacity='.5' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+                 background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .fld-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; color: rgba(21,24,29,0.62); margin-bottom: 0.4rem; display: block; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     /* offset in-page anchors so they clear the fixed header */
     [id] { scroll-margin-top: 96px; }
   </style>
@@ -174,7 +207,7 @@
       </nav>
       <div class="flex-1"></div>
       <a href="contact.html" class="hidden sm:flex items-center justify-center px-10 lg:px-16 bg-brand-dark text-cloud font-semibold hover:bg-brand transition-colors">Get a Quote</a>
-      <a href="contact.html" class="hidden lg:flex items-center px-8 border-l border-ink/10 text-sm font-medium text-ink hover:text-brand transition-colors">Contact Us</a>
+      <a href="contact.html" class="hidden lg:flex items-center px-8 border-l border-ink/10 text-sm font-medium text-brand font-semibold">Contact Us</a>
       <button id="menuBtn" class="lg:hidden flex items-center px-5 ml-auto text-ink" aria-label="Menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -196,112 +229,180 @@
   </header>
 
   <!-- PAGE HERO -->
-  <section class="bg-cloud pt-32 md:pt-40 pb-14 md:pb-16">
+  <section class="bg-cloud pt-32 md:pt-40 pb-12 md:pb-14">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <nav class="text-xs text-ink/45 mb-8" aria-label="Breadcrumb">
         <a href="index.html" class="hover:text-ink">Home</a>
         <span class="mx-2">/</span>
-        <a href="what-we-build.html" class="hover:text-ink">What We Build</a>
-        <span class="mx-2">/</span>
-        <span class="text-ink/70">Architectural Builds</span>
+        <span class="text-ink/70">Contact</span>
       </nav>
-      <p class="eyebrow text-brand mb-5">What We Build &middot; 04</p>
-      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight-2 leading-[1.04] max-w-4xl">Architectural Builds</h1>
-      <p class="lead text-ink/70 mt-7 max-w-2xl">Considered, custom homes built alongside your architect and designer. For us, every home is a custom home, and there is nothing we love more than taking great designs and bringing them to life. The more challenging, the better.</p>
+      <p class="eyebrow text-brand mb-5">Contact</p>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl tracking-tight-2 leading-[1.04] max-w-4xl">Let's talk about your build.</h1>
+      <p class="lead text-ink/70 mt-7 max-w-2xl">Whether you have a site and a set of plans or just an idea you are turning over, we are happy to talk it through. Tell us a little about the project and we will come back to you.</p>
+    </div>
+  </section>
 
-      <div class="flex flex-wrap items-center gap-4 mt-9">
-        <a href="contact.html" class="btn inline-flex items-center gap-2.5 rounded-full bg-ink text-cloud font-semibold px-7 py-3.5 hover:bg-brand-dark">
-          Start your build
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="what-we-build.html" class="btn inline-flex items-center gap-2.5 rounded-full border border-ink/15 text-ink font-semibold px-7 py-3.5 hover:bg-ink hover:text-cloud">All build types</a>
+  <!-- FORM + DETAILS -->
+  <section class="bg-cloud pb-20 md:pb-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+
+        <!-- form -->
+        <div class="lg:col-span-3 bg-white rounded-2xl card-shadow p-6 md:p-9 reveal">
+          <h2 class="font-display text-2xl md:text-3xl tracking-tight-2 leading-tight">Send us an enquiry</h2>
+          <p class="text-ink/60 mt-3 text-sm leading-relaxed">Fields marked * are required. If you would rather talk it through, call <a href="tel:0393524720" class="text-brand font-medium link-underline">(03) 9352 4720</a>.</p>
+
+          <!-- SETUP REQUIRED: create the Zentos form at formspree.io and replace FORMSPREE_FORM_ID below with the
+               real form id. Until then the submit handler blocks sending and points people at the phone and email,
+               so no enquiry is silently lost (see Apollo Earthworks, which shipped on a placeholder and dropped
+               submissions for weeks). Test a real submission from the live site once it is wired. -->
+          <form id="enquiry" class="mt-7" method="POST" action="https://formspree.io/f/FORMSPREE_FORM_ID" novalidate>
+            <input type="hidden" name="_subject" value="New project enquiry (zentos.com.au)">
+            <div class="hp" aria-hidden="true"><label>Do not fill this in <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="fld-label" for="f-name">Name *</label>
+                <input class="fld" id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+              </div>
+              <div>
+                <label class="fld-label" for="f-phone">Phone *</label>
+                <input class="fld" id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="04__ ___ ___" required>
+              </div>
+              <div>
+                <label class="fld-label" for="f-email">Email *</label>
+                <input class="fld" id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+              <div>
+                <label class="fld-label" for="f-suburb">Project suburb</label>
+                <input class="fld" id="f-suburb" name="suburb" type="text" placeholder="Where is the site?">
+              </div>
+              <div>
+                <label class="fld-label" for="f-type">What are you building?</label>
+                <select class="fld" id="f-type" name="project_type">
+                  <option value="" selected>Select one</option>
+                  <option>Multi-unit development</option>
+                  <option>Medium density build</option>
+                  <option>Sloping block build</option>
+                  <option>Architectural home</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div>
+                <label class="fld-label" for="f-stage">Where is it up to?</label>
+                <select class="fld" id="f-stage" name="stage">
+                  <option value="" selected>Select one</option>
+                  <option>Just an idea at this stage</option>
+                  <option>Concept or sketch plans</option>
+                  <option>Working drawings done</option>
+                  <option>Permits approved, ready to build</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label class="fld-label" for="f-message">About the project *</label>
+              <textarea class="fld" id="f-message" name="message" rows="5" placeholder="Tell us what you are planning, and anything about the site we should know." required></textarea>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 mt-7">
+              <button type="submit" id="f-submit" class="btn inline-flex items-center gap-2.5 rounded-full bg-ink text-cloud font-semibold px-8 py-3.5 hover:bg-brand-dark disabled:opacity-60 disabled:cursor-not-allowed">
+                <span id="f-submit-text">Send enquiry</span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <p class="text-xs text-ink/45">We usually reply within one business day.</p>
+            </div>
+
+            <p id="f-error" class="hidden mt-5 rounded-xl border border-[#b4453c]/30 bg-[#b4453c]/5 text-[#8f342d] text-sm leading-relaxed px-4 py-3.5"></p>
+          </form>
+
+          <div id="f-success" class="hidden mt-2">
+            <div class="rounded-xl border border-brand/25 bg-brand-light px-5 py-6 text-center">
+              <svg class="mx-auto text-brand" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+              <p class="font-display text-xl text-ink mt-3">Thanks, that has come through.</p>
+              <p class="text-ink/65 text-sm mt-2 max-w-md mx-auto leading-relaxed">We will be in touch shortly. If it is urgent, call <a href="tel:0393524720" class="text-brand font-medium link-underline">(03) 9352 4720</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- details -->
+        <div class="lg:col-span-2 space-y-4 reveal">
+          <div class="bg-white rounded-2xl card-shadow p-6 md:p-7">
+            <p class="eyebrow text-brand mb-5">Get in touch</p>
+            <div class="space-y-5 text-sm">
+              <div>
+                <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-1.5">Phone</p>
+                <a href="tel:0393524720" class="font-display text-2xl text-ink hover:text-brand transition-colors">(03) 9352 4720</a>
+              </div>
+              <div>
+                <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-1.5">Email</p>
+                <a href="mailto:enquiries@zentos.com.au" class="text-ink/80 hover:text-brand break-all link-underline">enquiries@zentos.com.au</a>
+              </div>
+              <div>
+                <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-1.5">Showroom &amp; office</p>
+                <p class="text-ink/80 leading-relaxed">Suite 1214, 401 Docklands Drive,<br>Docklands VIC 3008</p>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Suite+1214%2C+401+Docklands+Drive%2C+Docklands+VIC+3008" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-brand font-medium mt-2 link-underline">
+                  Get directions
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </div>
+              <div>
+                <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40 mb-1.5">Where we build</p>
+                <p class="text-ink/80 leading-relaxed">Metropolitan Melbourne.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 mt-7 pt-6 border-t border-ink/10">
+              <a href="https://instagram.com/zentosconstructions" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center hover:bg-ink hover:text-white transition-colors">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+              </a>
+              <a href="https://www.facebook.com/zentosconstructions" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center hover:bg-ink hover:text-white transition-colors">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg>
+              </a>
+              <a href="https://au.linkedin.com/in/serkan-aslan-0b545a61" target="_blank" rel="noopener" aria-label="Serkan Aslan on LinkedIn" class="w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center hover:bg-ink hover:text-white transition-colors">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.4h3.1V20H3.4V8.4zm5.06 0h2.97v1.58h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.7 2.06 3.7 4.73V20h-3.1v-5.15c0-1.23-.02-2.8-1.71-2.8-1.71 0-1.97 1.34-1.97 2.72V20h-3.1V8.4z"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@ZentosConstructions" target="_blank" rel="noopener" aria-label="YouTube" class="w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center hover:bg-ink hover:text-white transition-colors">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.8C19.3 5 12 5 12 5s-7.3 0-8.9.5A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.8C4.7 19 12 19 12 19s7.3 0 8.9-.5a2.5 2.5 0 0 0 1.7-1.8C23 15.2 23 12 23 12zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <a href="product-showroom.html" class="group block bg-brand-dark text-cloud rounded-2xl card-shadow p-6 md:p-7 hover:bg-brand transition-colors">
+            <p class="eyebrow text-cloud/60 mb-3">Product Showroom</p>
+            <p class="font-display text-xl leading-snug">Come and see the range in person.</p>
+            <p class="text-cloud/70 text-sm mt-3 leading-relaxed">Every finish for your home under one roof. Showroom visits are by appointment, so get in touch to book a time.</p>
+            <span class="inline-flex items-center gap-2 text-sm font-semibold mt-5">Visit the showroom<svg class="transition-transform group-hover:translate-x-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HERO IMAGE BAND -->
-  <div class="max-w-6xl mx-auto px-6 md:px-10">
-    <div class="rounded-2xl card-shadow h-[38vh] md:h-[52vh] relative overflow-hidden bg-ink/5">
-          <img src="assets/images/architectural/hero.jpg" srcset="assets/images/architectural/thumbs/hero.jpg 800w, assets/images/architectural/hero.jpg 1600w" sizes="(min-width: 1152px) 1088px, 100vw" alt="Architect-designed living area opening to an alfresco and pool, built by Zentos Constructions" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-        </div>
-  </div>
-
-  <!-- OVERVIEW -->
-  <section class="bg-cloud">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div class="reveal">
-          <p class="eyebrow text-brand mb-4">Overview</p>
-          <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">Architectural Builds</h2>
-          <p class="lead text-ink/70 mt-5 max-w-xl">We are happy to work with your architect, or to lead the project from design through to completion with our own experienced architect. Either way, we protect the detail rather than cut corners, and stay close to the drawings so the home that gets built is the home that was designed.</p>
-          <p class="lead text-ink/70 mt-4 max-w-xl">For changes to an existing design, the same architect who created the drawings can fine-tune or extend it, so it stays true to the original style and integrity.</p>
-          <ul class="mt-8 space-y-3.5 text-ink/75">
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Close collaboration with your architect and consultants</span></li>
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>End-to-end design and construct with our own architect, if you prefer</span></li>
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Careful detailing and finishing across the whole build</span></li>
-          <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A build managed to protect the design intent</span></li>
-          </ul>
-        </div>
-        <div class="rounded-2xl card-shadow min-h-[360px] md:min-h-[460px] relative overflow-hidden bg-ink/5">
-          <img src="assets/images/architectural/side.jpg" srcset="assets/images/architectural/thumbs/side.jpg 800w, assets/images/architectural/side.jpg 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Dining and bar area with marble joinery and terrazzo floors in a Zentos architectural build" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PILLARS -->
+  <!-- WHAT HAPPENS NEXT -->
   <section class="bg-white border-y border-ink/10">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-24">
       <div class="max-w-3xl reveal">
-        <p class="eyebrow text-brand mb-4">Why Zentos</p>
-        <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">What you can count on.</h2>
+        <p class="eyebrow text-brand mb-4">What happens next</p>
+        <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">No pressure, no hard sell.</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-6 md:gap-7 mt-12">
-        <div class="bg-white rounded-2xl border border-ink/10 card-shadow p-7 md:p-8 reveal">
-          <h3 class="font-display text-xl md:text-2xl">Every home is custom</h3>
-          <p class="text-ink/65 mt-3 leading-relaxed">Part of the Zentos difference: we are not volume builders. Whatever the brief, the home is built for you, not pulled off a plan.</p>
-        </div>
-        <div class="bg-white rounded-2xl border border-ink/10 card-shadow p-7 md:p-8 reveal">
-          <h3 class="font-display text-xl md:text-2xl">Your architect, or ours</h3>
-          <p class="text-ink/65 mt-3 leading-relaxed">Bring your own architect and we will build to the drawings, or use our experienced architect to take a vision from concept to completion.</p>
-        </div>
-        <div class="bg-white rounded-2xl border border-ink/10 card-shadow p-7 md:p-8 reveal">
-          <h3 class="font-display text-xl md:text-2xl">Design integrity protected</h3>
-          <p class="text-ink/65 mt-3 leading-relaxed">Detailing and any amendments stay true to the architectural intent, so the finished home reads exactly as it was designed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OTHER BUILDS -->
-  <section class="bg-cloud">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-20">
-      <div class="flex items-end justify-between gap-6 mb-8">
+      <div class="grid md:grid-cols-3 gap-10 md:gap-12 mt-12 reveal">
         <div>
-          <p class="eyebrow text-brand mb-3">More of what we build</p>
-          <h2 class="font-display text-2xl md:text-3xl tracking-tight-2 leading-tight">Other build types</h2>
+          <p class="font-display text-5xl text-brand/25 leading-none">01</p>
+          <p class="font-display text-xl text-ink mt-4">We get in touch</p>
+          <p class="text-ink/65 mt-3 leading-relaxed text-sm">Usually within one business day. We will ask a few questions about the site, the plans and what you are hoping to end up with.</p>
         </div>
-        <a href="what-we-build.html" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-brand shrink-0">View all<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div>
+          <p class="font-display text-5xl text-brand/25 leading-none">02</p>
+          <p class="font-display text-xl text-ink mt-4">We sit down together</p>
+          <p class="text-ink/65 mt-3 leading-relaxed text-sm">A conversation at the showroom or on site, so you can get a feel for how we work before anything is committed.</p>
+        </div>
+        <div>
+          <p class="font-display text-5xl text-brand/25 leading-none">03</p>
+          <p class="font-display text-xl text-ink mt-4">You get it in writing</p>
+          <p class="text-ink/65 mt-3 leading-relaxed text-sm">A considered, itemised price with the scope spelled out, so you know exactly what is included before you decide anything.</p>
+        </div>
       </div>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <a href="multi-unit-developments.html" class="group/o flex items-center justify-between gap-4 bg-cloud rounded-xl border border-ink/10 px-5 py-4 hover:border-brand/40"><span class="font-display text-lg text-ink">Multi-Unit Developments</span><svg class="text-brand transition-transform group-hover/o:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="medium-density-builds.html" class="group/o flex items-center justify-between gap-4 bg-cloud rounded-xl border border-ink/10 px-5 py-4 hover:border-brand/40"><span class="font-display text-lg text-ink">Medium Density Builds</span><svg class="text-brand transition-transform group-hover/o:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="sloping-block-builds.html" class="group/o flex items-center justify-between gap-4 bg-cloud rounded-xl border border-ink/10 px-5 py-4 hover:border-brand/40"><span class="font-display text-lg text-ink">Sloping Block Builds</span><svg class="text-brand transition-transform group-hover/o:translate-x-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-ink text-cloud">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-      <div>
-        <h2 class="font-display text-3xl md:text-5xl tracking-tight-2 leading-tight max-w-2xl">Have a site or a set of plans?</h2>
-        <p class="text-cloud/70 mt-5 max-w-lg leading-relaxed">Tell us about the project and we will let you know how we would approach it. Call <a href="tel:0393524720" class="text-cloud underline decoration-cloud/30 underline-offset-4 hover:decoration-cloud">(03) 9352 4720</a> or send us a note.</p>
-      </div>
-      <a href="contact.html" class="btn inline-flex items-center gap-3 rounded-full bg-cloud text-ink font-semibold px-8 py-4 hover:bg-brand hover:text-cloud w-fit shrink-0">
-        Start your build
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      <p class="text-sm text-ink/50 mt-12"><a href="process.html" class="text-brand font-semibold link-underline">See the full process</a> from first conversation through to handover.</p>
     </div>
   </section>
 
@@ -363,7 +464,7 @@
                 <li><a href="process.html" class="text-ink/80 hover:text-brand">Process</a></li>
                 <li><a href="about.html" class="text-ink/80 hover:text-brand">About</a></li>
                 <li><a href="product-showroom.html" class="text-ink/80 hover:text-brand">Product Showroom</a></li>
-                <li><a href="contact.html" class="text-ink/80 hover:text-brand">Contact</a></li>
+                <li><a href="contact.html" class="text-brand font-semibold">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -371,7 +472,7 @@
 
         <!-- right: photo panel -->
         <div class="relative rounded-2xl overflow-hidden card-shadow min-h-[420px] bg-ink/5">
-          <img src="assets/images/architectural/footer.jpg" srcset="assets/images/architectural/thumbs/footer.jpg 800w, assets/images/architectural/footer.jpg 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Main bedroom in an architectural home built by Zentos Constructions" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+          <img src="assets/images/medium-density/footer.jpg" srcset="assets/images/medium-density/thumbs/footer.jpg 800w, assets/images/medium-density/footer.jpg 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Bedroom and walk-in robe in a medium density townhouse by Zentos Constructions" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
         </div>
       </div>
 
@@ -412,6 +513,54 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => io.observe(el));
+
+    // Contact form
+    (function () {
+      const form = document.getElementById('enquiry');
+      if (!form) return;
+      const btn = document.getElementById('f-submit');
+      const btnText = document.getElementById('f-submit-text');
+      const errBox = document.getElementById('f-error');
+      const okBox = document.getElementById('f-success');
+      const CONFIGURED = form.action.indexOf('FORMSPREE') === -1 && form.action.indexOf('/f/') !== -1;
+
+      const fail = (msg) => {
+        errBox.innerHTML = msg;
+        errBox.classList.remove('hidden');
+        errBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      };
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errBox.classList.add('hidden');
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        // Never let an enquiry disappear into an unconfigured endpoint.
+        if (!CONFIGURED) {
+          fail('Sorry, the enquiry form is not accepting submissions just yet. Please call <a href="tel:0393524720" class="underline font-semibold">(03) 9352 4720</a> or email <a href="mailto:enquiries@zentos.com.au" class="underline font-semibold">enquiries@zentos.com.au</a> and we will get straight back to you.');
+          return;
+        }
+
+        btn.disabled = true;
+        btnText.textContent = 'Sending...';
+
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+          .then(function (res) {
+            if (!res.ok) throw new Error('bad response');
+            form.classList.add('hidden');
+            okBox.classList.remove('hidden');
+            okBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btnText.textContent = 'Send enquiry';
+            fail('Something went wrong sending that. Please try again, or call <a href="tel:0393524720" class="underline font-semibold">(03) 9352 4720</a> and we will take the details over the phone.');
+          });
+      });
+    })();
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
