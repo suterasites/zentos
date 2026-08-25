@@ -42,6 +42,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 z-[70] hidden items-center justify-center bg-ink/95 p-4 md:p-10" role="dialog" aria-modal="true" aria-label="Sloping block photo viewer">
+    <button type="button" id="lbClose" class="absolute top-4 right-4 md:top-6 md:right-6 w-11 h-11 rounded-full border border-cloud/25 text-cloud flex items-center justify-center hover:bg-cloud hover:text-ink transition-colors" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button type="button" id="lbPrev" class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-cloud/25 text-cloud flex items-center justify-center hover:bg-cloud hover:text-ink transition-colors" aria-label="Previous photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button type="button" id="lbNext" class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-cloud/25 text-cloud flex items-center justify-center hover:bg-cloud hover:text-ink transition-colors" aria-label="Next photo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <figure class="max-w-5xl w-full">
+      <img id="lbImg" src="" alt="" class="w-full max-h-[76vh] object-contain rounded-xl">
+      <figcaption id="lbCap" class="text-cloud/70 text-sm text-center mt-4"></figcaption>
+    </figure>
+  </div>
+
   <script>
     tailwind.config = {
       theme: {
@@ -78,7 +95,6 @@
     .nav-shadow { box-shadow: 0 10px 30px -20px rgba(21,24,29,0.4); }
     .chip { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
     /* Grey image placeholders (awaiting Serkan's photography) */
-    .ph { background-color: #e8e5e0; background-image: linear-gradient(135deg, rgba(21,24,29,0.03) 25%, transparent 25%, transparent 50%, rgba(21,24,29,0.03) 50%, rgba(21,24,29,0.03) 75%, transparent 75%, transparent); background-size: 22px 22px; color: #a29c92; }
     /* Mega menu */
     .mega { opacity: 0; visibility: hidden; transform: translateY(8px); pointer-events: none;
             transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
@@ -222,7 +238,9 @@
 
   <!-- HERO IMAGE BAND -->
   <div class="max-w-6xl mx-auto px-6 md:px-10">
-    <div class="ph rounded-2xl card-shadow flex items-center justify-center h-[38vh] md:h-[52vh]"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/></svg></div>
+    <div class="rounded-2xl card-shadow h-[38vh] md:h-[52vh] relative overflow-hidden bg-ink/5">
+      <img src="assets/images/sloping-block-page/hero-stepped-frames.jpg" srcset="assets/images/sloping-block-page/thumbs/hero-stepped-frames.jpg 800w, assets/images/sloping-block-page/hero-stepped-frames.jpg 1600w" sizes="(min-width: 1152px) 1088px, 100vw" alt="Timber frames stepping down the fall of a sloping site, built by Zentos Constructions" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+    </div>
   </div>
 
   <!-- OVERVIEW -->
@@ -240,7 +258,9 @@
           <li class="flex gap-3"><svg class="text-brand mt-1 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Street appeal and outlook that only a sloping block can offer</span></li>
           </ul>
         </div>
-        <div class="ph rounded-2xl card-shadow flex items-center justify-center min-h-[360px] md:min-h-[460px]"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/><path d="M21 16l-5-5L5 20"/></svg></div>
+        <div class="rounded-2xl card-shadow min-h-[360px] md:min-h-[460px] relative overflow-hidden bg-ink/5 reveal">
+          <img src="assets/images/sloping-block-page/retaining-against-the-cut.jpg" srcset="assets/images/sloping-block-page/thumbs/retaining-against-the-cut.jpg 800w, assets/images/sloping-block-page/retaining-against-the-cut.jpg 1600w" sizes="(min-width: 1024px) 50vw, 100vw" alt="Permanent formwork retaining walls going up against the cut on a sloping site" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+        </div>
       </div>
     </div>
   </section>
@@ -265,6 +285,36 @@
           <h3 class="font-display text-xl md:text-2xl">Compliance handled</h3>
           <p class="text-ink/65 mt-3 leading-relaxed">Height, overlooking and drainage get complicated on a slope. We manage best practice and compliance so you don't have to.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ON THE SLOPE -->
+  <section class="bg-white border-b border-ink/10">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <div class="max-w-3xl reveal">
+        <p class="eyebrow text-brand mb-4">On site</p>
+        <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">What building on a fall actually looks like.</h2>
+        <p class="lead text-ink/70 mt-5">A slope is dealt with long before anyone sees a finished house. These are our own sites at the stages that decide the job: cutting a level platform, retaining the cut, then pouring and framing off it.</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-12">
+        <button type="button" class="gal group relative block overflow-hidden rounded-2xl bg-ink/5 aspect-[4/3] text-left reveal focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                data-src="assets/images/sloping-block-page/site-cut-and-benched.jpg" data-caption="Benching the platform" data-alt="Excavator cutting a level building platform into a sloping block">
+          <img src="assets/images/sloping-block-page/site-cut-and-benched.jpg" srcset="assets/images/sloping-block-page/thumbs/site-cut-and-benched.jpg 800w, assets/images/sloping-block-page/site-cut-and-benched.jpg 1600w" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw" alt="Excavator cutting a level building platform into a sloping block" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]">
+        </button>
+        <button type="button" class="gal group relative block overflow-hidden rounded-2xl bg-ink/5 aspect-[4/3] text-left reveal focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                data-src="assets/images/sloping-block-page/level-platform-cut-into-the-fall.jpg" data-caption="Slab set out on the cut" data-alt="Slab set out on a platform cut into the fall of the land, with the batter running along the boundary">
+          <img src="assets/images/sloping-block-page/level-platform-cut-into-the-fall.jpg" srcset="assets/images/sloping-block-page/thumbs/level-platform-cut-into-the-fall.jpg 800w, assets/images/sloping-block-page/level-platform-cut-into-the-fall.jpg 1600w" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw" alt="Slab set out on a platform cut into the fall of the land, with the batter running along the boundary" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]">
+        </button>
+        <button type="button" class="gal group relative block overflow-hidden rounded-2xl bg-ink/5 aspect-[4/3] text-left reveal focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                data-src="assets/images/sloping-block-page/slab-pour-from-above.jpg" data-caption="Pouring off the cut" data-alt="Concrete pump placing a slab on a site cut into the slope, seen from directly above">
+          <img src="assets/images/sloping-block-page/slab-pour-from-above.jpg" srcset="assets/images/sloping-block-page/thumbs/slab-pour-from-above.jpg 800w, assets/images/sloping-block-page/slab-pour-from-above.jpg 1600w" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw" alt="Concrete pump placing a slab on a site cut into the slope, seen from directly above" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]">
+        </button>
+        <button type="button" class="gal group relative block overflow-hidden rounded-2xl bg-ink/5 aspect-[4/3] text-left reveal focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                data-src="assets/images/sloping-block-page/framing-above-the-street.jpg" data-caption="Framing above the street" data-alt="Framed home under scaffold sitting above the street, with the hillside suburb behind">
+          <img src="assets/images/sloping-block-page/framing-above-the-street.jpg" srcset="assets/images/sloping-block-page/thumbs/framing-above-the-street.jpg 800w, assets/images/sloping-block-page/framing-above-the-street.jpg 1600w" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw" alt="Framed home under scaffold sitting above the street, with the hillside suburb behind" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]">
+        </button>
       </div>
     </div>
   </section>
@@ -407,6 +457,45 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => io.observe(el));
+
+    // Sloping block photo lightbox
+    const galItems = Array.from(document.querySelectorAll('.gal'));
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    let lbIndex = 0, lbOpener = null;
+
+    const lbShow = (i) => {
+      lbIndex = (i + galItems.length) % galItems.length;
+      const el = galItems[lbIndex];
+      lbImg.src = el.dataset.src;
+      lbImg.alt = el.dataset.alt;
+      lbCap.textContent = el.dataset.caption;
+    };
+    const lbOpen = (i, opener) => {
+      lbOpener = opener; lbShow(i);
+      lb.classList.remove('hidden'); lb.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('lbClose').focus();
+    };
+    const lbClose = () => {
+      lb.classList.add('hidden'); lb.classList.remove('flex');
+      document.body.style.overflow = '';
+      lbImg.removeAttribute('src');
+      if (lbOpener) lbOpener.focus();
+    };
+
+    galItems.forEach((el, i) => el.addEventListener('click', () => lbOpen(i, el)));
+    document.getElementById('lbClose').addEventListener('click', lbClose);
+    document.getElementById('lbPrev').addEventListener('click', () => lbShow(lbIndex - 1));
+    document.getElementById('lbNext').addEventListener('click', () => lbShow(lbIndex + 1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) lbClose(); });
+    document.addEventListener('keydown', (e) => {
+      if (lb.classList.contains('hidden')) return;
+      if (e.key === 'Escape') lbClose();
+      if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+      if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+    });
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();

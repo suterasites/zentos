@@ -8,3 +8,6 @@ assets/video/_unused/
 assets/video/_r2-upload/
 
 .DS_Store
+
+# client-supplied photo archives live outside git in ~/SUTERA SITES CLIENTS/
+*.zip
