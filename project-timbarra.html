@@ -77,9 +77,6 @@
     .reveal-show { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
     .nav-shadow { box-shadow: 0 10px 30px -20px rgba(21,24,29,0.4); }
     /* Sound toggle icon swap */
-    .fp-sound-toggle .fp-sound-on { display: none; }
-    .fp-sound-toggle[aria-pressed="false"] .fp-sound-off { display: none; }
-    .fp-sound-toggle[aria-pressed="false"] .fp-sound-on { display: inline; }
     /* Mega menu */
     .mega { opacity: 0; visibility: hidden; transform: translateY(8px); pointer-events: none;
             transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
@@ -218,17 +215,10 @@
       <!-- landscape video -->
       <div class="reveal">
         <div class="relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-video">
-          <video id="project-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata">
+          <video id="project-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline controls preload="metadata">
             <source src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/project-timbarra.mp4" type="video/mp4">
           </video>
         </div>
-        <button type="button" id="fp-sound-toggle" aria-pressed="true" aria-label="Unmute walkthrough" class="fp-sound-toggle inline-flex items-center gap-2 rounded-full border border-ink/15 text-ink/70 text-[0.68rem] font-semibold tracking-[0.14em] uppercase px-3.5 py-1.5 mt-4 hover:bg-ink hover:text-cloud transition-colors">
-          <span class="fp-sound-icon inline-flex" aria-hidden="true">
-            <svg class="fp-sound-off" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-            <svg class="fp-sound-on" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-          </span>
-          <span class="fp-sound-label">Sound off</span>
-        </button>
       </div>
       <!-- details -->
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 mt-10 md:mt-12 items-start">
@@ -296,13 +286,9 @@
       <div class="mt-12 md:mt-16 space-y-16 md:space-y-24">
         <article class="pfilm reveal grid lg:grid-cols-[1fr_minmax(0,300px)] gap-8 lg:gap-12 items-start">
           <div class="pfilm-frame relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-[4/5] md:aspect-video">
-            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline preload="none"
-            data-poster-wide="assets/images/projects/posters/timbarra-progress-1.jpg"
-            data-src-wide="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-1.mp4"
+            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline controls preload="none"
+            src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-1.mp4" poster="assets/images/projects/posters/timbarra-progress-1.jpg"
             data-src-tall="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-1-v.mp4" data-poster-tall="assets/images/projects/posters/timbarra-progress-1-v.jpg"></video>
-            <button type="button" class="pfilm-play absolute inset-0 w-full h-full flex items-center justify-center bg-ink/30 hover:bg-ink/15 focus-visible:bg-ink/15 transition-colors" aria-label="Play progress film 01 (1:08)">
-              <span class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full bg-cloud/95 text-ink items-center justify-center card-shadow pl-1"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg></span>
-            </button>
           </div>
           <div>
             <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40">Film 01 <span aria-hidden="true">&middot;</span> <span class="sr-only">running time </span>1:08</p>
@@ -313,13 +299,9 @@
 
         <article class="pfilm reveal grid lg:grid-cols-[1fr_minmax(0,300px)] gap-8 lg:gap-12 items-start">
           <div class="pfilm-frame relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-[4/5] md:aspect-video">
-            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline preload="none"
-            data-poster-wide="assets/images/projects/posters/timbarra-progress-2.jpg"
-            data-src-wide="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-2.mp4"
+            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline controls preload="none"
+            src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-2.mp4" poster="assets/images/projects/posters/timbarra-progress-2.jpg"
             data-src-tall="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-2-v.mp4" data-poster-tall="assets/images/projects/posters/timbarra-progress-2-v.jpg"></video>
-            <button type="button" class="pfilm-play absolute inset-0 w-full h-full flex items-center justify-center bg-ink/30 hover:bg-ink/15 focus-visible:bg-ink/15 transition-colors" aria-label="Play progress film 02 (1:04)">
-              <span class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full bg-cloud/95 text-ink items-center justify-center card-shadow pl-1"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg></span>
-            </button>
           </div>
           <div>
             <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40">Film 02 <span aria-hidden="true">&middot;</span> <span class="sr-only">running time </span>1:04</p>
@@ -330,12 +312,9 @@
 
         <article class="pfilm reveal grid lg:grid-cols-[1fr_minmax(0,300px)] gap-8 lg:gap-12 items-start">
           <div class="pfilm-frame relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-video">
-            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline preload="none"
-            data-poster-wide="assets/images/projects/posters/timbarra-progress-3.jpg"
-            data-src-wide="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-3.mp4"></video>
-            <button type="button" class="pfilm-play absolute inset-0 w-full h-full flex items-center justify-center bg-ink/30 hover:bg-ink/15 focus-visible:bg-ink/15 transition-colors" aria-label="Play progress film 03 (1:01)">
-              <span class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full bg-cloud/95 text-ink items-center justify-center card-shadow pl-1"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg></span>
-            </button>
+            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline controls preload="none"
+            src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-3.mp4" poster="assets/images/projects/posters/timbarra-progress-3.jpg"
+           ></video>
           </div>
           <div>
             <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40">Film 03 <span aria-hidden="true">&middot;</span> <span class="sr-only">running time </span>1:01</p>
@@ -346,13 +325,9 @@
 
         <article class="pfilm reveal grid lg:grid-cols-[1fr_minmax(0,300px)] gap-8 lg:gap-12 items-start">
           <div class="pfilm-frame relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-[4/5] md:aspect-video">
-            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline preload="none"
-            data-poster-wide="assets/images/projects/posters/timbarra-progress-4.jpg"
-            data-src-wide="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-4.mp4"
+            <video class="pfilm-video absolute inset-0 w-full h-full object-cover" playsinline controls preload="none"
+            src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-4.mp4" poster="assets/images/projects/posters/timbarra-progress-4.jpg"
             data-src-tall="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/timbarra-progress-4-v.mp4" data-poster-tall="assets/images/projects/posters/timbarra-progress-4-v.jpg"></video>
-            <button type="button" class="pfilm-play absolute inset-0 w-full h-full flex items-center justify-center bg-ink/30 hover:bg-ink/15 focus-visible:bg-ink/15 transition-colors" aria-label="Play progress film 04 (1:08)">
-              <span class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full bg-cloud/95 text-ink items-center justify-center card-shadow pl-1"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.29-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg></span>
-            </button>
           </div>
           <div>
             <p class="text-[0.7rem] font-semibold tracking-[0.16em] uppercase text-ink/40">Film 04 <span aria-hidden="true">&middot;</span> <span class="sr-only">running time </span>1:08</p>
@@ -490,70 +465,42 @@
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Walkthrough video: autoplays muted; the sound toggle (a real click) unmutes.
+    // Progress films. Native controls do the work - the earlier custom overlay could not be
+    // dismissed, because Tailwind's .flex beats the [hidden] rule in preflight on equal
+    // specificity, so the button stayed over the video and swallowed every click.
+    // The markup ships the landscape cut, so the films work with no JS at all. This swaps in
+    // the portrait cut on a narrow screen and only asks for metadata once a film is scrolled
+    // near, which is what puts a real duration on the scrubber.
     (function () {
-      const video = document.getElementById('project-video');
-      const toggle = document.getElementById('fp-sound-toggle');
-      let muted = true;
-      if (!video || !toggle) return;
-      toggle.addEventListener('click', () => {
-        muted = !muted;
-        video.muted = muted;
-        toggle.setAttribute('aria-pressed', muted ? 'true' : 'false');
-        toggle.setAttribute('aria-label', muted ? 'Unmute walkthrough' : 'Mute walkthrough');
-        const label = toggle.querySelector('.fp-sound-label');
-        if (label) label.textContent = muted ? 'Sound off' : 'Sound on';
-        const p = video.play();
-        if (p && p.catch) p.catch(() => {});
-      });
-    })();
-
-    // Progress films. The poster is fetched only as the film comes into view, the video
-    // only when someone asks for it, and the cut that loads matches the viewport.
-    (function () {
-      const films = Array.from(document.querySelectorAll('.pfilm'));
+      const films = Array.from(document.querySelectorAll('.pfilm-video'));
       if (!films.length) return;
-      const wide = () => window.matchMedia('(min-width: 768px)').matches;
-      const pick = (el, key) => (!wide() && el.dataset[key + 'Tall']) ? el.dataset[key + 'Tall'] : el.dataset[key + 'Wide'];
+      const narrow = () => !window.matchMedia('(min-width: 768px)').matches;
 
-      const posterIO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const v = entry.target;
-          v.poster = pick(v, 'poster');
-          obs.unobserve(v);
-        });
-      }, { rootMargin: '600px 0px' }) : null;
+      const ready = video => {
+        if (video.dataset.ready) return;
+        video.dataset.ready = '1';
+        if (narrow() && video.dataset.srcTall) {
+          video.setAttribute('src', video.dataset.srcTall);
+          if (video.dataset.posterTall) video.poster = video.dataset.posterTall;
+        }
+        video.preload = 'metadata';
+        video.load();
+      };
 
-      films.forEach(film => {
-        const video = film.querySelector('.pfilm-video');
-        const play = film.querySelector('.pfilm-play');
-        if (!video || !play) return;
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(e => { if (e.isIntersecting) { ready(e.target); obs.unobserve(e.target); } });
+        }, { rootMargin: '600px 0px' });
+        films.forEach(v => io.observe(v));
+      } else {
+        films.forEach(ready);
+      }
 
-        if (posterIO) posterIO.observe(video); else video.poster = pick(video, 'poster');
-        // Orientation can change before anyone presses play; after that the loaded cut stands.
-        window.addEventListener('resize', () => { if (!video.currentSrc && video.poster) video.poster = pick(video, 'poster'); });
-
-        play.addEventListener('click', () => {
-          films.forEach(other => {
-            if (other === film) return;
-            const v = other.querySelector('.pfilm-video');
-            const b = other.querySelector('.pfilm-play');
-            if (v && !v.paused) { v.pause(); if (b) b.hidden = false; }
-          });
-          const want = pick(video, 'src');
-          if (video.getAttribute('src') !== want) { video.setAttribute('src', want); video.load(); }
-          video.controls = true;
-          video.muted = false;
-          play.hidden = true;
-          const p = video.play();
-          // A blocked unmuted start is not a failure - fall back to muted rather than to nothing.
-          if (p && p.catch) p.catch(() => { video.muted = true; video.play().catch(() => { play.hidden = false; }); });
-        });
-
-        video.addEventListener('ended', () => { play.hidden = false; video.controls = false; });
-      });
+      // Only one film at a time, including the walkthrough at the top of the page.
+      const all = films.concat(Array.from(document.querySelectorAll('#project-video')));
+      all.forEach(video => video.addEventListener('play', () => {
+        all.forEach(other => { if (other !== video && !other.paused) other.pause(); });
+      }));
     })();
   </script>
 </body>
