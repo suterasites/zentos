@@ -1,3 +1,0 @@
-# The site canonicalises to www - all 14 pages carry rel=canonical to https://www.zentos.com.au.
-# Without this the apex serves the same 14 pages on its own host and splits the ranking signal.
-https://zentos.com.au/* https://www.zentos.com.au/:splat 301
