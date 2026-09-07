@@ -4,6 +4,10 @@ CLAUDE.md
 # Superseded / raw source videos - not deployed (large source files)
 assets/video/_unused/
 
+# Raw camera masters dropped in for transcoding - 4K/vertical, gigabytes, never deployed
+assets/video/*.mp4
+assets/video/*.mov
+
 # Web-ready project videos staged for R2 upload - hosted on R2, not committed here
 assets/video/_r2-upload/
 
