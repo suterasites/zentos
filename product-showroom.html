@@ -256,6 +256,37 @@
     </div>
   </div>
 
+  <!-- SHOWROOM WALKTHROUGH -->
+  <section id="walkthrough" class="bg-white border-y border-ink/10 mt-20 md:mt-28 scroll-mt-28">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <div class="grid lg:grid-cols-[minmax(0,340px)_1fr] gap-10 lg:gap-16 items-center">
+
+        <div class="reveal w-full max-w-[300px] sm:max-w-[340px] mx-auto lg:mx-0">
+          <div class="relative rounded-2xl overflow-hidden card-shadow bg-ink aspect-[9/16]">
+            <video id="showroomReel" class="absolute inset-0 w-full h-full object-cover" playsinline controls preload="none"
+              src="https://pub-c5ed6df36b7e4bc0a1a41fafee2a5640.r2.dev/showroom-reel.mp4"
+              poster="assets/images/showroom/showroom-reel-poster.jpg"
+              aria-label="Walk through the Zentos Constructions product showroom"></video>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="eyebrow text-brand mb-4">Take a look inside <span class="text-ink/35" aria-hidden="true">&middot;</span> <span class="text-ink/45"><span class="sr-only">running time </span>0:31</span></p>
+          <h2 class="font-display text-3xl md:text-4xl tracking-tight-2 leading-tight">Half a minute on the showroom floor.</h2>
+          <p class="lead text-ink/70 mt-5 max-w-xl">The quickest way to get a feel for the place before you come in. Full-sized kitchen and bathroom displays, stone benchtops, tapware, bricks and cladding, tiles and flooring, all in the one walk through.</p>
+          <p class="text-ink/65 mt-4 max-w-xl leading-relaxed">Have a closer look at the <a href="#gallery" class="underline decoration-ink/25 underline-offset-4 hover:decoration-ink">photos below</a>, then come and see it properly.</p>
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a href="contact.html" class="btn inline-flex items-center gap-2.5 rounded-full bg-ink text-cloud font-semibold px-7 py-3.5 hover:bg-brand-dark">
+              Book an appointment
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- TWO LEVELS OF INSPIRATION -->
   <section id="experience" class="bg-cloud">
     <div class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
@@ -474,6 +505,22 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => io.observe(el));
 
+    // Showroom reel. The markup ships preload="none" so the page costs nothing until
+    // someone wants the film. This asks for metadata once it is scrolled near, which is
+    // what puts a real duration on the scrubber before the first tap.
+    const reel = document.getElementById('showroomReel');
+    if (reel) {
+      const arm = () => { if (reel.preload !== 'metadata') { reel.preload = 'metadata'; reel.load(); } };
+      if ('IntersectionObserver' in window) {
+        const rio = new IntersectionObserver((entries, obs) => {
+          entries.forEach(e => { if (e.isIntersecting) { arm(); obs.unobserve(e.target); } });
+        }, { rootMargin: '600px 0px' });
+        rio.observe(reel);
+      } else {
+        arm();
+      }
+    }
+
     // Gallery lightbox
     const galItems = Array.from(document.querySelectorAll('.gal'));
     const lb = document.getElementById('lightbox');
@@ -490,6 +537,7 @@
     };
     const lbOpen = (i, opener) => {
       lbOpener = opener;
+      if (reel && !reel.paused) reel.pause();
       lbShow(i);
       lb.classList.remove('hidden');
       lb.classList.add('flex');
