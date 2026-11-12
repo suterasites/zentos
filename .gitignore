@@ -15,3 +15,6 @@ assets/video/_r2-upload/
 
 # client-supplied photo archives live outside git in ~/SUTERA SITES CLIENTS/
 *.zip
+
+# Internal notes. The host publishes everything tracked here, so this stays local.
+/CLOUDFLARE-NOTES.md
